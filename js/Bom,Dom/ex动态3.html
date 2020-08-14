@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxm{
+            height: 50px;
+            width: 300px;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: 10px 0px;
+            line-height:50px;
+            overflow: hidden;
+        }
+
+        .box{
+            height: 50px;
+            width: 0px;
+            line-height:50px;
+            background-color: blue;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="boxm">
+        <div class="box">0%</div>
+    </div>
+    
+    <button id="but">按钮</button>
+
+    <script>
+        var num=0;
+        var oBox=document.getElementsByClassName("box")[0];
+        var oBtn=document.getElementById("but");
+        var timer;
+
+        // oBtn.onclick=function(){
+           
+        //     timer=setInterval(function(){
+        //         if(oBox.offsetWidth<300){
+        //             oBox.style.width=(oBox.offsetWidth + 3) +"px";
+        //             oBox.innerText=++num + "%";
+        //         }else{
+        //             clearInterval(timer)
+        //         }
+        //     },16)
+            
+           
+        // }
+
+
+        oBtn.onclick=function(){
+            run();
+
+        }
+        function run(){
+            if(oBox.offsetWidth<300){
+                oBox.style.width=(oBox.offsetWidth + 3) +"px";
+                oBox.innerText=(++num) + "%";
+                requestAnimationFrame(run);
+            }
+           
+
+        }
+
+
+
+    </script>
+</body>
+</html>

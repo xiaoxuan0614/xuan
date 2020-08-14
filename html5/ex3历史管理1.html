@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="but">按钮</button>
+    <script>
+        var oBut = document.getElementById("but");
+        var obj = {};
+        oBut.onclick = function () {
+            var _random = Math.random();
+            location.hash = _random;
+            var arr = [];
+            for (var i = 0; i < 5; i++) {
+                arr.push(Math.floor(Math.random() * 10))
+            }
+                obj[_random] = arr;
+                // console.log(arr)
+            }
+
+            window.onhashchange = function () {
+                // console.log(location.hash)
+                var _hash = location.hash.slice(1);
+                console.log(obj[_hash]);
+            }
+        
+    </script>
+</body>
+
+</html>

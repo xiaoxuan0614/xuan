@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: pink;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            height: 170px;
+            width: 490px;
+            border: 5px solid white;
+            margin: 30px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back ul {
+            width: 2940px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .back li {
+            float: left;
+        }
+
+        .content {
+            height: 30px;
+            width: 100%;
+            float: left;
+        }
+
+        .content-left li {
+            float: left;
+            margin: 0px 3px;
+        }
+
+        .content-right li {
+            float: left;
+            margin: 0 3px;
+        }
+
+        .content .content-left {
+            float: left;
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+        }
+
+        .content .content-right {
+            float: left;
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+        }
+
+
+        .content-left .left-btn,
+        .content-right .right-btn {
+            height: 20px;
+            width: 20px;
+            background-color: orange;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+
+        }
+
+        .content-right .active {
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="back">
+            <ul id="img-box">
+                <li><img src="../image/lb01.jpg" alt=""></li>
+                <li><img src="../image/lb02.jpg" alt=""></li>
+                <li><img src="../image/lb03.jpg" alt=""></li>
+                <li><img src="../image/lb04.jpg" alt=""></li>
+                <li><img src="../image/lb05.jpg" alt=""></li>
+                <li><img src="../image/lb01.jpg" alt=""></li>
+            </ul>
+
+        </div>
+
+        <div class="content">
+            <div class="content-left">
+                <li class="left-btn">&lt;</li>
+                <li class="left-btn">&gt;</li>
+
+            </div>
+            <div class="content-right">
+                <ul>
+                    <li class="right-btn active">1</li>
+                    <li class="right-btn">2</li>
+                    <li class="right-btn">3</li>
+                    <li class="right-btn">4</li>
+                    <li class="right-btn">5</li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var rbtn = document.getElementsByClassName("right-btn");
+        var Img = document.getElementById("img-box");
+        var lbtn = document.getElementsByClassName("left-btn");
+        var timer;
+        var nowIndex = 0;
+        var nextIndex = 0;
+        var direction = 0;
+
+        function changImg(index) {
+            nextIndex = index;
+            if (nowIndex > nextIndex) {
+                direction = 10;
+            }
+            else if (nowIndex < nextIndex) {
+                direction = -10;
+            }
+            else if (nextIndex == 1 && nowIndex == 5) {   //判断右边界
+                direction = -10;
+
+            }
+            else if (nextIndex == -1 && nowIndex == 0) {  //判断左边界
+                direction = 10;
+                Img.style.left = "-2450px";
+            }
+            for (var j = 0; j < rbtn.length; j++) {
+                rbtn[j].classList.remove("active");
+            }
+            if (nextIndex == -1) {//左边界
+                rbtn[4].classList.add("active");
+                nextIndex = 4;
+            } else if (nextIndex == 5) {//右边界
+                rbtn[0].classList.add("active");
+            } else {
+                rbtn[nextIndex].classList.add("active");
+            }
+            //控制图片滚动的
+            timer = setInterval(function () {
+                if (Img.offsetLeft == -490 * nextIndex) {
+                    clearInterval(timer);
+                    if (nextIndex == 5) {//右边界
+                        nowIndex = 0;
+                        Img.style.left = 0;
+                    } else {
+                        nowIndex = nextIndex;
+                    }
+                } else {
+                    Img.style.left = Img.offsetLeft + direction + "px";
+                }
+
+            }, 16)
+        }
+        // 数字滚动
+        for (var i = 0; i < rbtn.length; i++) {
+            rbtn[i].index = i;
+            rbtn[i].onclick = function () {
+                changImg(this.index);
+            }
+        }
+        // 点击右键滚动
+        lbtn[1].onclick = function () {
+            changImg(nowIndex + 1)
+        }
+        // 点击左键滚动
+        lbtn[0].onclick = function () {
+            changImg(nowIndex - 1)
+        }
+
+
+    </script>
+</body>
+
+</html>

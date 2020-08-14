@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .box {
+            height: 400px;
+            width: 400px;
+            border: 2px dashed white;
+            margin: 40px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: foo 2s linear infinite;
+        }
+        @keyframes foo{
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box li {
+            height: 400px;
+            width: 400px;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 66px;
+            text-align: center;
+            line-height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .box li:nth-child(1) {
+            transform: translateZ(200px);
+        }
+
+        .box li:nth-child(2) {
+            transform: translateZ(-200px);
+        }
+
+        .box li:nth-child(3) {
+            transform: rotateX(90deg) translateZ(200px);
+        }
+
+        .box li:nth-child(4) {
+            transform: rotateX(90deg) translateZ(-200px);
+        }
+
+        .box li:nth-child(5) {
+            transform: rotateY(90deg) translateZ(-200px);
+        }
+
+        .box li:nth-child(6) {
+            transform: rotateY(90deg) translateZ(200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

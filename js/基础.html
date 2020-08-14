@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    //     var a=10;
+    //     var b=20;
+    //    if(a>b)
+    //    {
+    //        console.log("a大于b");
+    //    }
+    //    else if(a<b)
+    //    {
+    //        console.log("a小于b");
+    //    }
+    //    else {
+    //        console.log("a等于b")
+    // }
+    // var a=null;
+    // if(a){
+    //     console.log("a为真")
+
+    // }
+    // else{
+    //     console.log("a为假")
+    // }
+
+    // var str="hello";
+    // document.write("<h1 class='active'>"+str+"</h1>")
+    // var arr=[0,1,2,3,[4,5,6]]
+    // console.log(arr)
+    
+    // var arr=[0,1,2,4];
+    // var b=arr[0];
+    // // arr[0]=7;
+    // // // console.log(b);
+
+    // var arr2=arr;
+    // arr2[1]=9;
+    // console.log(arr2)
+
+    // var a,b;
+    // function foo(a,b){
+    //     // console.log("hello");
+    //     return(1+2);
+    // }
+    // var num=foo(1,2)
+    // console.log(num);
+
+    // var foo=function(){
+    //     console.log("hello");
+    //         }
+    //         foo();
+
+        // function foo(){
+        //     arr=[1,2,4,5]
+        // }
+        // foo();
+        // console.log(arr[1]);
+
+        // var arr=[0,1,2,3,4,5,6];
+        // var sum=0;
+        // for(var i=0;i<arr.length;i++){
+        //     console.log(arr[i]);
+        // }
+        
+        // var str="hrllpo";
+        // for(var i=0;i<=str.length;i++){
+        //     console.log(str[i])
+        // }
+
+        // var arr=[0,1,2,3,4];
+        // var i=100;
+        // while(i<arr.length){
+        //     console.log(arr[i]);
+        //     i++
+        // }
+        // // var i=100;
+        // var arr=[1,2,3,4,5];
+        // do{
+        //     console.log(arr[i]);
+        //     i++;
+        // }while(i<arr.length)
+        
+        // var person = {
+        //     name:"小明",
+        //     age:18,
+        //     parent:{
+        //         name:"刘艳",
+        //         age:40
+        //     },
+        //     sayHello:function(a){
+        //         console.log("hello"+a);
+        //     }
+        // }
+        // person.sayHello("小刚");
+        // console.log(person.parent.age)
+
+        // var person = {
+        //     name:"lxx",
+        //     age:20,
+        //     parent:{
+        //         name:"lyl",
+        //         age:45
+        //     },
+        //     sayHello: function(a){
+        //         console.log("hello"+a)
+        //     }
+        // }
+        // person.sayHello("rcx");
+        // var str="2007-1-20";
+        // console.log(str.split("-"))
+        
+        // var arr=[1,2,3,4,5]
+        // // arr.push(6,7)
+        // // console.log(arr)
+        // var arr2=[6,7]
+        // // arr.concat(arr2)
+        // // // console.log(arr,arr2)
+        // // console.log(arr.join("hello"))
+        // // arr.pop();
+        // // console.log(arr)
+
+        // // console.log(arr.slice(1,3))
+
+        // // console.log(arr.reverse())
+        // console.log(Math.ceil(Math.random()*10))
+
+    //     var timer = new Date();
+    // let timerArr = [];
+    // timerArr.push(timer.getFullYear());
+    // timerArr.push(timer.getMonth()+1);
+    // timerArr.push(timer.getDate());
+    // console.log(timerArr.join("-"));
+    // console.log(timer.getDay())
+    // console.log(timer.getHours())
+    // console.log(timer.getMinutes())
+    // var a=0115;
+    // console.log(a.toString(10))
+
+//    var x=Math.random();
+//    var y=Math.random();
+//    console.log(x);
+//    console.log(y);
+//    var z=x>y?x:y;
+//    console.log(x,y,z)
+
+        // var arr=[1,2,3,4,5,6,7];
+        // for(var i=0;i<arr.length;i++){
+        //     console.log(arr[i]);
+        //     if(arr[i]==4)
+        //     {
+        //         continue;
+        //     }
+        //     console.log("索引为"+i);
+        // }
+        // var arr=[1,2,3,4,5]
+        // for(var i=0，j=10; i=j=10;  i++, j--）
+        // var  i; 
+        // while(i<20){
+        //     i+=2;
+        // console.log(i);
+        // }
+
+        // var sum=0;
+        // var total=1;
+        // while(total=1){
+        //     for(var i=2;i<=10;i++){
+        //     total=total*i;
+        // }
+        // sum=sum+total;
+        // }
+        // console.log(sum);
+
+    //    var a = window.prompt("请输入数字");
+    //    switch(a){
+    //        case '1':console.log("星期一");break;
+    //        case '2':console.log("星期二");break;
+    //        case '3':console.log("星期三");break;
+    //        case '4':console.log("星期四");break;
+    //        case '5':console.log("星期五");break;
+    //        case '6':console.log("星期六");break;
+    //        case '7':console.log("星期七");break;
+    //        default:console.log("输入错误")
+    //    }
+       
+    //    var sum=1;
+    //    for(var i=1;i<=10;i++){
+    //        sum*=i;
+    //    }
+    //    console.log(sum);
+
+    // var jiecheng=1;
+    // var sum=0;
+    // for(var i=1;i<=10;i++)
+    // {
+    //     for(var j=1;j<=i;j++){
+    //         jiecheng*=j;
+    //     }
+    //     sum +=jiecheng;
+    //     jiecheng=1;
+    // }
+    // console.log(sum);
+
+    // for(var i=1;i<=5;i++){
+    //     for(var j=1;j<=i;j++){
+    //         document.write(j);
+    //         document.write("&nbsp;");
+    //     }
+           
+    //     document.write("<br/>")
+    // }
+
+    // for(var i=100;i<1000;i++){
+    //     if(i%4==2 && i%7==3 && i%9==5){
+    //         console.log(i);
+    //     }
+    // }
+
+    //  var today=new Date();
+    //  var year = today.getFullYear();
+    //  console.log(today.getFullYear())
+    //  if((year%4==0 && year%100 !=0) || year%400==0)
+    //  {
+    //      console.log("这是一个闰年")
+    //  }
+
+    // var x=Math.random();
+    // var y=Math.random();
+    // var z=x>y?x:y;
+    // console.log(x,y,z)
+
+    // var x=window.prompt("请输入年龄");
+    // if(x<14){
+    //     console.log("儿童");
+
+    // }else if(x>=14 && x<24){
+    //     console.log("青少年");
+    // }else if(x>=24 && x<40){
+    //     console.log("青年");
+    // }else if(x>=40 && x<60){
+    //     console.log("中年");
+    // }else{
+    //     console.log("老年");
+    // }
+
+    // var sum=1;
+    // for(var i=1;i<=10;i++){
+    //     sum*=i;
+    // }
+    // console.log(sum)
+
+    // var jc=1;
+    // var sum=0;
+    // for(var i=1;i<=10;i++){
+    //     for(var j=1;j<=i;j++){
+    //         jc*=j;
+    //     }
+    //     sum+=jc;
+    //     jc=1;
+    // }   
+    // console.log(sum)
+
+    // for(var i=1;i<=5;i++){
+    //     for(j=1;j<=i;j++){
+    //         document.write(j);
+    //         document.write("&nbsp;");
+    //     }
+    //     document.write("<br/>")
+    // }
+
+    // var x=window.prompt("请输入x的值");
+    // var y=4*x*x+3*x+2;
+    // console.log(y);
+
+        // var x=window.prompt("请输入x的值");
+        // var y=window.prompt("请输入y的值");
+        // var z=x<y?x:y;
+        // console.log(z);
+        // var arr=[];
+        // for(var i=1;i<1000;i++){
+        //     if(i%3==0 && i%5==0 && i%7==0){
+        //         arr.push(i);
+        //     }
+        // }
+        // for(var j=0;j<arr.length;j++){
+        //     document.write(arr[j]);
+        //     document.write("&nbsp;");
+        //     if((j+1)%6==0){
+        //         document.write("<br/>")
+        //     }
+        // }
+
+        // var a=console.log(Math.floor(Math.random()*8))
+
+        // var rightnow=new Date();
+        // var weekday = rightnow.getDay();
+        // console.log(rightnow.getDay())
+
+        // var s="1234567890"; 
+        // s=s.substr(5,2);
+        // console.log(s)
+
+    //     function foodorder(){
+    //         var food=Math.floor(Math.random()*10);
+    //         var _foodName="";
+    //         switch(food){
+    //     case 0:_foodName = "土豆丝";break;
+    //     case 1:_foodName = "宫保鸡丁";break;
+    //     case 2:_foodName = "土豆丝";break;
+    //     case 3:_foodName = "香辣肉丝";break;
+    //     case 4:_foodName = "锅包肉";break;
+    //     case 5:_foodName = "面条";break;
+    //     case 6:_foodName = "馒头";break;
+    //     case 7:_foodName = "包子";break;
+    //     case 8:_foodName = "粥";;break;
+    //     case 9:_foodName = "凉菜";break
+    //         }
+    //         return _foodName;
+    //     }
+    //     var isGo=window.confirm("请选择是否用餐");
+    // if(isGo){
+    //   var personNum=window.prompt("请输入几人用餐");
+    //   personNum=parseInt(personNum)
+    //   var personName=[];
+    //   var resultArr=[];
+
+    //   for(var i=0;i<personNum;i++){
+    //       var thisName=window.prompt("第"+(i+1)+"个人叫什么")
+    //       personName.push(thisName);
+    //   }
+    //   for(var j=0;j<personNum;j++){
+    //       resultArr.push(personName[j]+"吃"+foodorder())
+
+    //   }
+    //   console.log(resultArr)
+      
+    // }else{
+    //   window.alert("欢迎下次光临")
+    // }
+
+
+    </script>
+</body>
+</html>

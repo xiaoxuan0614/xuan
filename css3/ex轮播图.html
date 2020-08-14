@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+
+        }
+
+        ul {
+            width: 1230px;
+            margin: 0px auto;
+        }
+
+        .box {
+            height: 500px;
+            position: relative;
+        }
+        .sp-1 {
+            background-color: rgb(232, 232, 232);
+        }
+
+        .sp-2 {
+            background-color: black;
+        }
+
+        .sp-3 {
+            background-color: rgb(232, 232, 232);
+        }
+        .box-p{
+            height: 500px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 1s ease;
+            
+
+        }
+        .active{
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="box-p sp-1 active">
+                <img src="https://img.alicdn.com/simba/img/TB1fN3WA7CWBuNjy0FaSutUlXXa.jpg" alt="">
+            </li>
+            <li class="box-p sp-2">
+                <img src="https://img.alicdn.com/tps/i4/TB1o_JiAVOWBuNjy0FiSutFxVXa.jpg" alt="">
+            </li>
+            <li class="box-p sp-3">
+                <img src="https://img.alicdn.com/simba/img/TB114X1gBjTBKNjSZFuSuv0HFXa.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+    <script>
+        var picture=document.getElementsByClassName("box-p");
+        var nowIndew = 0;
+    setInterval(function(){
+      picture[nowIndew].classList.remove("active");
+      if(++nowIndew <3){
+        picture[nowIndew].classList.add("active");
+      }else{
+        nowIndew = 0
+        picture[nowIndew].classList.add("active");
+      }
+      
+    },2000)
+
+    </script>
+</body>
+
+</html>

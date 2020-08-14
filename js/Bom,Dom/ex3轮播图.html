@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: black;
+        }
+        li{
+            list-style: none;
+        }
+        .box{
+            height: 170px;
+            width: 490px;
+            margin: 20px auto;
+            border: 5px solid white;
+            position: relative;
+        }
+        .back-top li{
+            display: none;
+        }
+        .back-top .active{
+            display: block;
+        }
+        .back-content{
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+        }
+        .back-content .content-left{
+            float: left;
+        }
+        .back-content .content-right{
+            float: right;
+        }
+        .back-content li{
+            height: 20px;
+            width: 20px;
+            float: left;
+            margin: 0 5px;
+            background-color: orange;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+        }
+        .content-right .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="back-top">
+            <ul>
+                <li class="top-img active"><img src="../image/lb01.jpg" alt=""></li>
+                <li class="top-img"><img src="../image/lb02.jpg" alt=""></li>
+                <li class="top-img"><img src="../image/lb03.jpg" alt=""></li>
+                <li class="top-img"><img src="../image/lb04.jpg" alt=""></li>
+                <li class="top-img"><img src="../image/lb05.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="back-content">
+            <div class="content-left">
+                <ul>
+                    <li class="left-btn">&lt;</li>
+                    <li class="left-btn">&gt;</li>
+                </ul>
+
+            </div>
+            <div class="content-right">
+                <ul>
+                    <li class="right-btn active">1</li>
+                    <li class="right-btn">2</li>
+                    <li class="right-btn">3</li>
+                    <li class="right-btn">4</li>
+                    <li class="right-btn">5</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+    // 切换指定图片
+        function changeImg(index){
+            for(var j=0;j<aBtn.length;j++){
+                aImg[j].classList.remove("active")
+                aBtn[j].classList.remove("active");
+            }
+            nowIndex=index;
+            aImg[index].classList.add("active");
+            aBtn[index].classList.add("active");
+
+        }
+    // 数字轮播
+        var aImg=document.getElementsByClassName("top-img");
+        var aBtn=document.getElementsByClassName("right-btn");
+        var bBtn=document.getElementsByClassName("left-btn");
+        var oBox=document.getElementsByClassName("box")[0];
+        var nowIndex=0;
+        var timer;
+
+        for(var i=0;i<aBtn.length;i++){
+            aBtn[i].index=i;
+            aBtn[i].onmouseover=function(){
+                changeImg(this.index)
+            //     for(var j=0;j<aBtn.length;j++){
+            //         aBtn[j].classList.remove("active")
+            //         aImg[j].classList.remove("active");
+            //     }
+                
+            //     this.classList.add("active");
+            //     aImg[this.index].classList.add("active");
+            }
+           
+        }
+
+    // 右轮播
+        bBtn[1].onclick=function(){
+            // var nextIndex=(++nowIndex)%5;
+            var nextIndex=++nowIndex
+            if(nextIndex == 5){
+            nextIndex = 0
+            }
+      
+            // changeImg(nextIndex);
+            for(var j=0;j<aBtn.length;j++){
+                aImg[j].classList.remove("active")
+                aBtn[j].classList.remove("active");
+            }
+            nowIndex=nextIndex;
+            aImg[nextIndex].classList.add("active");
+            aBtn[nextIndex].classList.add("active");
+
+        }
+    // 左轮播
+        bBtn[0].onclick=function(){
+            var justIndex=--nowIndex;
+            if(justIndex==-1){
+                justIndex=4;
+            }
+            changeImg(justIndex);
+
+            // for(var j=0;j<aBtn.length;j++){
+            //     aImg[j].classList.remove("active")
+            //     aBtn[j].classList.remove("active");
+            // }
+            // aImg[justIndex].classList.add("active");
+            // aBtn[justIndex].classList.add("active");
+
+        }
+    // 当鼠标移入时停止自动播放
+        oBox.onmouseover=function(){
+            clearInterval(timer)
+        }
+    // 当鼠标移出时自动播放
+        oBox.onmouseout=function(){
+            run();
+        }
+
+    // 定时播放
+        function run(){
+            timer=setInterval(function(){
+                var nextIndex=(++nowIndex)%5
+                changeImg(nextIndex)
+            },1000)
+        }
+
+        
+
+
+
+    </script>
+</body>
+</html>

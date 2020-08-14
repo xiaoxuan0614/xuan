@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            border: 1px dashed black;
+            height: 600px;
+            width: 600px;
+            margin: 10px auto;
+
+        }
+
+        .box1 {
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin: 50px auto;
+            position: relative;
+
+        }
+
+        .box1 li {
+            width: 8px;
+            height: 15px;
+            background-color: black;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            margin-left: -2px;
+            transform-origin: 1px 250px;
+        }
+
+
+        .box1 li:nth-child(5n+1) {
+            height: 24px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .hour,.minite,.miao {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            transform-origin: bottom center;
+        }
+
+        .hour {
+            height: 50px;
+            width: 8px;
+            background-color: blue;
+
+
+        }
+
+        .minite {
+            height: 120px;
+            width: 6px;
+            background-color: chartreuse;
+        }
+
+        .miao {
+            height: 130px;
+            width: 4px;
+            background-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">
+            <ul class="kd"></ul>
+            <div class="bz">
+                <div class="hour"></div>
+                <div class="minite"></div>
+                <div class="miao"></div>
+                
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <script>
+        var kd = document.getElementsByClassName("kd")[0];
+        var Hour = document.getElementsByClassName("hour")[0];
+        var Minite = document.getElementsByClassName("minite")[0];
+        var Miao = document.getElementsByClassName("miao")[0];
+        var htmlStr = "";
+
+
+        for (var i = 0; i < 60; i++) {
+            htmlStr += "<li style='transform:rotate(" + i * 6 + "deg)'></li>"
+        }
+        kd.innerHTML = htmlStr;
+
+        setInterval(function(){
+            run();
+
+        },1000)
+
+        function run() {
+            var timer = new Date();
+            var nowHour = timer.getHours();
+            var nowMinite = timer.getMinutes();
+            var nowMiao = timer.getSeconds();
+            Miao.style.transform = "translate(-50%,-100%) rotate(" + nowMiao * 6 + "deg)";
+            Minite.style.transform = "translate(-50%,-100%) rotate(" + nowMinite * 6 + "deg)";
+            Hour.style.transform = "translate(-50%,-100%) rotate(" + nowHour * 30 + "deg)"
+
+
+        }
+    </script>
+</body>
+
+</html>

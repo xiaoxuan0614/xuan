@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .active{
+            height: 100px;
+            width: 100px;
+
+        } */
+        #box{
+            border: 1px solid black;
+            height: 600px;
+            width: 800px;
+            margin: auto;
+            margin-top: 40px;
+        }
+        ul{
+            margin-top: -10px;
+            border-bottom: 1px solid black;
+        }
+        li{
+            list-style: none;
+        }
+        .li-first{
+            height: 400px;
+            width: 800px;
+        }
+        .li-img{
+          
+            padding:25px 25px;
+            float: left;
+            list-style: none;
+            text-align: center;
+            line-height: 171px;
+            border-right: 1px solid black;
+
+        }
+        .Img{
+            height: 130px;
+            width: 150px;
+        }
+    </style>
+    <!-- <style>
+        div{
+            height: 100px;
+            width: 100px;
+            color: black;
+            background-color: blue;
+            font-size: 14px;
+            display: none;
+            position: fixed;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- <div class="box"></div>
+    <div class="box2" style="color: blue;">再见</div>
+    <div id="box1"></div> -->
+
+    <!-- <div>欢迎光临 </div> -->
+    <!-- <button>确定</button> -->
+
+    <!-- <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div> -->
+<!-- 
+    <img src="" alt="" id="Img">
+    <button id="but">选择</button> -->
+    <div id="box">
+        <ul>
+            <li class="li-first"></li>
+            <li class="li-img"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596190809543&di=7e03489f0200a3e9d9faa77d048b25bb&imgtype=0&src=http%3A%2F%2Fwww.2qqtouxiang.com%2Fpic%2FTP3482_02.jpg" alt="" class="Img"></li>
+            <li class="li-img"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596190809543&di=b740fd215d13b4c2082addd607bb52ab&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Fmw690%2F475d4ef3jw1elvx2rfzbfj20dw0cqdgh.jpg" alt="" class="Img"></li>
+            <li class="li-img"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596190809543&di=fc231c75b28c9ea2193fc11dad80b05d&imgtype=0&src=http%3A%2F%2Fwww.zhongaigou.com%2FUploadFiles%2F2013-12%2Fbxxsh4.jpg" alt="" class="Img"></li>
+            <li class="li-img"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3189687091,2233948473&fm=26&gp=0.jpg" alt="" class="Img"></li>
+        </ul>
+    </div>
+    <script>
+        // var oDiv=document.getElementById("div")
+        // var oBox=document.getElementById("box")
+        // oBox.innerText="你好世界"
+        // var oBox=document.getElementById("box2")
+        // oBox.innerHTML="<h1>我爱你</h1>";
+
+        // var oBox=document.getElementsByClassName("box")[0];
+        // var oBox2=document.getElementsByClassName("box2")[0];
+        // var oBox1=document.getElementById("box1")
+
+        // oBox.innerHTML="<h1>你好</h1>"
+        // oBox.style.color="red";
+        // oBox.style.fontSize="20px";
+        // console.log(oBox2.style.color)
+        // oBox1.innerText="我喜欢你";
+        // oBox1.style.color="orange"
+        // oBox1.style.fontSize="30px"
+
+        // var oDiv=document.getElementsByTagName("div")[0];
+        // var oButton=document.getElementsByTagName("button")[0];
+        // oButton.onclick=function(){
+        //     console.log("click")
+        //     oDiv.style.color="red";
+        // }
+        // oButton.oncontextmenu=function(event){
+        //     console.log(event)
+        //     console.log("bb")
+        //     event.preventDefault();
+        // }
+        // var rootEl=document.documentElement;
+        // console.log(rootEl)
+        // rootEl.oncontextmenu=function(event){
+        //     event.preventDefault();
+        // }
+
+        // var oDiv=document.getElementsByTagName("div")[0];
+        // var rootEl=document.documentElement;
+        // console.log(rootEl);
+        // rootEl.oncontextmenu=function(event){
+        //     var x=event.clientX;
+        //     var y=event.clientY;
+        //     oDiv.style.display = "block";
+        //     oDiv.style.top = y + "px";
+        //     oDiv.style.left = x + "px";
+        //     console.log(x,y)
+        //     event.preventDefault();
+
+        // }
+        
+        // console.log("1")
+        // setTimeout(function() {
+        //     console.log("hello")
+        // }, 1000);
+        // console.log("2")
+
+        // setInterval(function() {
+        //     console.log("hello")
+        // }, 1000);
+
+
+        // var i=10;
+        // var timer=setInterval(function(){
+        //     console.log(i)
+        //     i--;
+        //     if(i==0){
+        //         clearInterval(timer)
+        //     }
+
+
+        // }, 1000)
+
+        // var oButton=document.getElementById("but");
+        // var oImg=document.getElementById("Img");
+        // oButton.onclick=function(){
+        //     oButton.innerText="图片";
+        //     oImg.setAttribute("src","https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596190809543&di=7e03489f0200a3e9d9faa77d048b25bb&imgtype=0&src=http%3A%2F%2Fwww.2qqtouxiang.com%2Fpic%2FTP3482_02.jpg")
+        //     oImg.setAttribute("class","active");
+        // }
+
+        var oBox=document.getElementById("box");
+        var oImg=document.getElementsByClassName("Img");
+        oImg[0].onmouseover=function(){
+            oImg.setAttribute("src","https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596190809543&di=7e03489f0200a3e9d9faa77d048b25bb&imgtype=0&src=http%3A%2F%2Fwww.2qqtouxiang.com%2Fpic%2FTP3482_02.jpg")
+        }
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+    </script>
+</body>
+</html>

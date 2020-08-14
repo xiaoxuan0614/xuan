@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米首页</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+     body {
+      font-size: 14px;
+      font-family: Helvetica,arial,"Hiragino Sans GB","PingFang SC","Microsoft YaHei","微軟正黑體","儷黑 Pro",sans-serif;
+    }
+    .header .h-logo{
+        width: 200px;
+        height: 98px;
+        background-image: url("images/biaoti.png");
+    }
+    .content{
+        background-image: url("images/bg.jpg");
+        width: 1263px;
+        height: 588px;
+        background-position: top center;
+        overflow: hidden;
+    }
+    .content .c-regisiter{
+        margin-top: 30px;
+
+    }
+    .content .login-box{
+        width: 410px;
+        height: 566px;
+        background: white;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+    .content .login-box .nav-tabs{
+      padding: 27px 0 24px;
+      text-align: center;
+      font-size: 24px;
+      color: #666;
+    }
+    .content .nav-tabs a{
+      color: #666;
+    }
+    .content .nav-tabs a.active{
+      color: #f56600;
+    }
+    .content .nav-tabs a:hover{
+      color: #f56600;
+    }
+    .content .nav-tabs span{
+      width: 1px;
+      height: 24px;
+      margin: 0 35px 0 31px;
+      border:1px solid #e0e0e0;
+    }
+    .content .login-box .form-content{
+        text-align: center;
+        margin: 0px auto;
+    }
+    .content .login-box .form-content input{
+        width: 348px;
+        height: 50px;
+        outline: none;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 14px;
+    }
+    .content .login-box .form-content button:hover{
+        cursor: pointer;
+    }
+    .content .login-box .form-content button{
+        background: #ff6700;
+        color: #fff;
+        height: 50px;
+        width: 348px;
+        border: none;
+        font-size: 14px;
+        margin: 10px 0px 14px;
+    }
+    .content .login-info{
+        text-align: center;
+        margin: 0px auto;
+    }
+    .login-info .info-sjh{
+        color: #ff6700;
+        margin-bottom: 30px;
+    }
+    .login-info .info-zhuce{
+        text-align: center;
+        margin: 0px auto;
+        padding: 30px 0px 0px;
+    }
+    .login-info .info-zhuce a{
+        color: #999;
+    }
+    .login-info span{
+      width: 1px;
+      height: 24px;
+      margin: 0px 10px;
+      border:1px solid #e0e0e0;
+    }
+    .login-info .info-zhuce a:hover{
+        color: #ff6700;
+        cursor: pointer;
+    }
+    .content .other-login{
+        width: 348px;
+        margin: 0px auto;
+        padding: 103px 0px 0px;
+    }
+    .other-login fieldset{
+        border-width: 1px 0px 0px 0px;
+        border-style: solid;
+        border-color: #e0e0e0;
+        text-align: center;
+    }
+    .other-login legend{
+        color: #BBBBBB;
+    }
+    .content .ol-icon ul {
+      margin-top: 20px;
+      padding: 0 40px;
+    }
+    .other-login .ol-icon li{
+        float: left;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin: 0 17px;
+    }
+    .other-login .ol-icon .qq
+    {
+        background-color: #0288d1;
+    }
+    .other-login .ol-icon .sina
+    {
+        background-color: #d32f2f;
+    }
+    .other-login .ol-icon .zhifubao
+    {
+        background-color: #00aaee;
+    }
+    .other-login .ol-icon .weixin
+    {
+        background-color: #00d20d;
+    }
+    .content .ol-icon i{
+        background-image: url("images/icons_type.png");
+        width: 18px;
+      height: 18px;
+      display: block;
+      margin: 4px auto 0;
+    }
+    .content .qq i {
+      background-position: -19px 0;
+    }
+
+    .content .sina i {
+      background-position: -38px 0;
+    }
+
+    .content .zhifubao i {
+      background-position: -57px 0;
+      width: 25px;
+    }
+
+    .content .weixin i {
+      background-position: -83px 0;
+      width: 24px;
+    }
+    .footer{
+        text-align: center;
+        padding-top: 100px;
+    }
+    .footer .footer-list li{
+        display: inline-block;
+    }
+    .footer .footer-list a{
+        color: #333;
+    }
+    .footer .nf-intro{
+      padding: 10px 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header wrapper">
+            <div class="h-logo">
+            </div>
+        </div>
+        <div class="content">
+            <div class="c-regisiter wrapper">
+                <div class="login-box">
+                    <div class="nav-tabs">
+                    <a class="active" href="javascript:void(0);">账号登录</a>
+                        <span></span>
+                      <a href="javascript:void(0);">扫码登录</a>
+                    </div>
+                    <div class="form-content">
+                        <input type="text" placeholder="邮箱/手机号/小米ID">
+                        <input type="password" placeholder="密码">
+                        <button>登录</button>
+                    </div>
+                    <div class="login-info">
+                        <a  class="info-sjh" href="#">手机短信登录注册</a>
+                       <div class="info-zhuce">
+                           <a href="#">立即注册</a>
+                           <span></span>
+                           <a href="#">忘记密码</a>
+                       </div>
+                    </div>
+                    <div class="other-login">
+                        <fieldset>
+                            <legend>其他方式登录</legend>
+                        </fieldset>
+                        <div class="ol-icon">
+                            <ul>
+                                <li class="qq">
+                                    <i></i>
+                                </li>
+                                <li class="sina">
+                                    <i></i>
+                                </li>
+                                <li class="zhifubao">
+                                    <i></i>
+                                </li>
+                                <li class="weixin">
+                                    <i></i>
+                                </li>
+                            </ul>
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+               
+
+
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-list">
+                <ul>
+                    <li><a href="javacript:void(0);">简体</a>
+                        |
+                    </li> 
+                    <li><a href="javacript:void(0);">繁体</a>
+                        |
+                    </li> 
+                    <li><a href="javacript:void(0);">English</a>
+                        |
+                    </li> 
+                    <li><a href="javacript:void(0);">常见问题</a>
+                        |
+                    </li> 
+                    <li><a href="javacript:void(0);">隐私政策</a>
+                        |
+                    </li> 
+        
+                </ul>
+            </div>
+        
+        <div class="nf-intro">
+            小米公司版权所有-京ICP备10046444-<img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png">京公网安备11010802020134号-京ICP证110507号
+        </div>
+        </div>
+    </div>
+</body>
+</html>

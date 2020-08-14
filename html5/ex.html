@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #can{
+            background-color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <!-- <header>aaaa</header>
+    <div>sss</div>
+    <nav>bbb</nav> -->
+    <!-- <form action="">
+        <input type="text" name="usename">
+        <input type="date">
+        <input type="password">
+        <input type="email">
+        <input type="url">
+        <input type="number">
+        <input type="button" value="提交">
+        <input type="submit" value="提交">
+
+
+    </form> -->
+    <canvas id="can" width="400px" height="200px"></canvas>
+    <script>
+        var oCan=document.getElementById("can");
+        var oCancontext=oCan.getContext("2d");       //初始化
+        oCancontext.strokeStyle="red";               //颜色
+        oCancontext.lineWidth=2;                    //宽度
+        oCancontext.beginPath();  //定义了一个新的路径绘制动作的开始。
+        oCancontext.moveTo(100,150);  //定位我们的绘图鼠标用的
+        oCancontext.lineTo(400,50)   // 以上下文点为起点，到方法参数中指定的点之间画一条直线
+        oCancontext.stroke();       // 为所画的线赋予颜色
+    </script>
+</body>
+</html>

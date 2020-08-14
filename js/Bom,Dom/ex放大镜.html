@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .left,.right{
+            height: 400px;
+            width: 400px;
+            margin-right: 10px;
+            float: left;
+            overflow: hidden;
+            position: relative;
+        }
+        .left img{
+            height: 400px;
+            width: 400px;
+           
+
+        }
+        .mosk{
+            height: 200px;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        .right img{
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="left"> 
+        <img src="../image/niu.png" alt="">
+        <div class="mosk"></div>
+    </div>
+    <div class="right">
+        <img id="img" src="../image/niu.png" alt="">
+    </div>
+
+    <script>
+        var Left=document.getElementsByClassName("left")[0];
+        var mosk=document.getElementsByClassName("mosk")[0];
+        var Img=document.getElementById("img");
+
+        Left.onmousemove=function(event){
+            var moveTop=event.clientY-100;
+            var moveLeft=event.clientX-100;
+            if(moveTop<0){
+                moveTop = 0;
+            }
+            if(moveLeft<0){
+                moveLeft = 0;
+            }
+            if(moveTop>200){
+                moveTop = 200;
+            }
+            if(moveLeft>200){
+                moveLeft = 200;
+            }
+
+            mosk.style.top=moveTop + "px";
+            mosk.style.left=moveLeft + "px";
+            Img.style.top=-2*moveTop +"px";
+            Img.style.left=-2*moveLeft + "px";
+        }
+
+    </script>
+</body>
+</html>

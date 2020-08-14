@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 400px;
+            width: 400px;
+            text-align: center;
+            background-color: grey;
+            margin: auto;
+            margin-top: 40px;
+            padding-top: 40px;
+            box-sizing: border-box;
+        }
+        #box1{
+            text-align: center;
+           
+        }
+        button{
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+            <h1 id="box1">100</h1>
+        <button id="but">开始</button>
+    </div>
+    <script>
+        var num=100;
+        var timer=null;
+        var IsGo=true;
+        var oBox1=document.getElementById("box1");
+        var oButton=document.getElementById("but");
+        oBox1.style.color="black";
+        oButton.onclick=function(){
+            if(IsGo){
+                timer=setInterval(function(){
+                oBox1.innerText=--num;
+                oButton.innerText="暂停";
+            },1000)
+            }
+            else{ 
+                clearInterval(timer)
+                oButton.innerText="开始";
+                }
+                IsGo = !IsGo;
+            
+        }
+    </script>
+
+</body>
+</html>

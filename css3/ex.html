@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 1000px;
+        }
+        .box{
+            height: 300px;
+            width: 300px;
+            border: 1px dashed black;
+            margin: 100px auto;
+            position: relative;
+        }
+        .div1{
+            height: 300px;
+            width: 300px;
+            /* transform: rotateY(180deg); */
+            background-color: blue;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: all 1s ease;
+            transform-style: preserve-3d;
+            margin: 0 auto;
+
+        }
+        .div2{
+            height: 300px;
+            width: 300px;
+            transform: rotateY(180deg) translateZ(10px);
+            background-color: burlywood;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            /* transform: rotateZ(10deg); */
+        }
+        .div1:hover{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="div1">hello
+            <div class="div2">world</div>
+        </div>
+    
+
+</div>
+    
+</body>
+</html>

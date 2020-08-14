@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            background-color: grey;
+            height: 50px;
+            width: 100px;
+            color: honeydew;
+            float: left;
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .active {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="active">first</li>
+        <li>second</li>
+        <li>third</li>
+    </ul>
+    <script>
+        var aLi = document.getElementsByTagName("li");
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].onclick = function () {
+                var _text=this.dataset.name;
+                location.hash=_text;
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className="";
+                }
+                this.className="active";
+
+            }
+        }
+        window.onhashchange=function(){
+            var _hash=location.hash.slice(1);
+            for(var i=0;i<aLi.length;i++){
+                if(aLi[i].innerText==_hash){
+                    aLi[i].className="active"
+                }
+                else{
+                    aLi[i].className="";
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
