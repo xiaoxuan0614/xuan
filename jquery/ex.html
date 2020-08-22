@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          margin:0;
+          padding: 0;
+        }
+        li{
+          list-style: none;
+        }
+        .box {
+          width: 600px;
+          height: 300px;
+          border: 1px solid black;
+          margin:100px auto;
+        }
+        .nav{
+          height: 50px;
+          background-color: black;
+        }
+        .nav li{
+          float: left;
+          height: 50px;
+          width: 100px;
+          color: white;
+          text-align: center;
+          line-height: 50px;
+        }
+        .nav .active{
+          background-color: #ddd;
+          color: black;
+        }
+        .content-text{
+          display: none;
+        }
+        .content .active{
+          display: block;
+        }
+      </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav">
+          <ul>
+            <li class="active">第一节课</li>
+            <li>第二节课</li>
+            <li>第三节课</li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="content-text active">
+            <h1>第一节课内容</h1>
+          </div>
+          <div class="content-text">
+            <h1>第二节课内容</h1>
+          </div>
+          <div class="content-text">
+            <h1>第三节课内容</h1>
+          </div>
+        </div>
+      </div>
+      <script src="jquery-1.12.4.js"></script>
+      <script>
+          $(".nav li").on("click",function(){
+              $(this).addClass("active").siblings().removeClass("active")
+              $(".content-text").eq($(this).index()).addClass("active").siblings().removeClass("active")
+          })
+      </script>
+</body>
+</html>

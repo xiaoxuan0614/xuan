@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            height: 170px;
+            width: 490px;
+            margin: 20px auto;
+            border: 5px solid white;
+            position: relative;
+        }
+
+        .back-top li {
+            display: none;
+        }
+
+        .back-top .active {
+            display: block;
+        }
+
+        .back-content {
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+        }
+
+        .back-content .content-left {
+            float: left;
+        }
+
+        .back-content .content-right {
+            float: right;
+        }
+
+        .back-content li {
+            height: 20px;
+            width: 20px;
+            float: left;
+            margin: 0 5px;
+            background-color: orange;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+        }
+
+        .content-right .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="back-top">
+            <ul>
+                <li class="top-img active"><img src="../image/lb01.jpg" alt=""></li>
+                <li class="top-img"><img src="../image/lb02.jpg" alt=""></li>
+                <li class="top-img"><img src="../image/lb03.jpg" alt=""></li>
+                <li class="top-img"><img src="../image/lb04.jpg" alt=""></li>
+                <li class="top-img"><img src="../image/lb05.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="back-content">
+            <div class="content-left">
+                <ul>
+                    <li class="left-btn" id="prev">&lt;</li>
+                    <li class="left-btn" id="next">&gt;</li>
+                </ul>
+
+            </div>
+            <div class="content-right">
+                <ul>
+                    <li class="right-btn active">1</li>
+                    <li class="right-btn">2</li>
+                    <li class="right-btn">3</li>
+                    <li class="right-btn">4</li>
+                    <li class="right-btn">5</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        var iNow = 0;
+        var timer;
+        $(".right-btn").on("click", function () {
+            // $(this).addClass("active").siblings().removeClass("active")
+            // $(".right-btn").eq($(this).index()).addClass("active").siblings().removeClass("active")
+            // $(".top-img").eq($(this).index()).addClass("active").siblings().removeClass("active")
+            change($(this).index());
+            iNow = $(this).index();
+        })
+        $("#next").on("click", function () {
+            iNow++;
+            if (iNow == 5) {
+                iNow = 0;
+            }
+            change(iNow)
+        })
+        $("#prev").on("click", function () {
+            iNow--;
+            if (iNow == -1) {
+                iNow = $(".right-btn").length - 1;
+            }
+            change(iNow)
+        })
+
+        function change(index) {
+            $(".right-btn").eq(index).addClass("active").siblings().removeClass("active")
+            $(".top-img").eq(index).addClass("active").siblings().removeClass("active")
+        }
+
+        timer = setInterval(function () {
+            $("#next").trigger("click");
+        }, 2000)
+
+        $(".box").on("mouseover", function () {
+            clearInterval(timer)
+        })
+
+        $(".box").on("mouseout", function () {
+            timer = setInterval(function () {
+                $("#next").trigger("click");
+            }, 2000)
+        })
+
+        
+
+
+    </script>
+</body>
+
+</html>
