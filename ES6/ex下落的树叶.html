@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position:absolute;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        // var screenHeight=document.documentElement.clientHeight || document.body.clientHeight
+        var screenWidth=document.documentElement.clientWidth || document.body.clientWidth
+        function Leaf(){
+            this.width=Math.random()*50+100
+            this.left=Math.random()*(screenWidth-this.width)
+            this.top=0;
+
+            var oImg=new Image();
+            oImg.src="img/"+(Math.floor(Math.random()*4)+1)+".png"
+            oImg.style.width=this.width+"px";
+            oImg.style.left=this.left+"px";
+            oImg.style.top=this.top+"px";
+            this.oImg=oImg;
+        }
+
+        Leaf.prototype.init=function(){
+            document.body.appendChild(this.oImg)
+        }
+        Leaf.prototype.fall=function(){
+            
+        }
+        for(var i=0;i<10;i++){
+            var leaf=new Leaf();
+            leaf.init()
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 | 美团网</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1952229_wcd00ps8l3.css">
+    <link rel="stylesheet" href="ifont/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 980px;
+            margin: auto;
+            height: 3000px;
+            font: 400 14px/1.5 'Hiragino Sans GB','WenQuanYi Micro Hei',tahoma,sans-serif;
+            color: #666;
+        }
+        .top{
+            height: 47px;
+            margin: 40px auto 30px;
+            /* background-color: aqua; */
+        }
+        .top img{
+            height: 47px;
+            width: 130px;
+        }
+        .content{
+            height: 370px;
+            margin: 0px auto 70px;
+            /* background-color: bisque; */
+        }
+       
+        .content .content-left{
+            margin: 0 115px 0 0;
+            float: left;
+           
+        }
+        .content .content-left img{
+            width: 480px;
+        }
+        .content .content-right{
+            width: 270px;
+            height: 340px;
+            /* background-color: blueviolet; */
+            float: left;
+            
+        }
+        .content-right .right-top{
+            padding-top: 45px;
+        }
+        .content-right span{
+            font-weight: 400;
+            color: #666;
+        }
+        .content-right .sj{
+            color: #666;
+            font-size: 12px;
+            float: right;
+        }
+        .right-content .con-input-sjh,.con-input-mm{
+            box-sizing: border-box;
+            width: 100%;
+            height: 36px;
+            margin: 8px 0;
+            border: 1px solid #aaa;
+            line-height: 36px;
+        }
+        .right-content .con-input-mm{
+            margin-top: 16px;
+        }
+        .right-content input{
+            border: none;
+        }
+        .content-right .wjmm{
+            color: #FE8C00;
+            float: right;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        .content-right button{
+            background-color: #FFD000;
+            height: 35px;
+            width: 100%;
+            color: #222;
+            border: none;
+            font-weight: 700;
+            box-shadow: 0 2px 1px rgba(191, 105, 0, .15);
+            padding: 7px 20px 6px;
+            margin: 8px 0px;
+
+        }
+        .content-right button:hover{
+            cursor: pointer;
+        }
+        .con-tishi a{
+            color: #FE8C00;
+        }
+        .con-other{
+            margin-top: 10px;
+        }
+        .con-other fieldset{
+            border-width: 1px 0px 0px 0px;
+            border-style: solid;
+            border-color: #e0e0e0;
+            text-align: center;
+        }
+        legend{
+            color: #666;
+        }
+        .con-other ul{
+            margin-top: 20px;
+            padding-left: 88px;
+        }
+        li{
+            list-style: none;
+        }
+        .con-other li{
+            height: 18px;
+            width: 18px;
+        }
+        .con-other .qq{
+            background-image: url(https://s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.2ee5c09.png);
+            background-position: -1250px -491px;
+            float: left;
+            margin-right: 20px;
+            
+        }
+        .con-other .xinlang{
+            background-image: url(https://s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/sp-normal.2ee5c09.png);
+            background-position: -1250px -599px;
+            float: left;
+        }
+        .footer{
+            margin: 0 auto 30px;
+        }
+        .bottom{
+            height: 28px;
+            /* background-color: blue; */
+            margin-bottom: 20px;
+            padding: 12px 0;
+            border-top: 1px solid #EEE;
+            border-bottom: 1px solid #EEE;
+        }
+        .bottom .bottom-list{
+            float: left;
+            line-height: 14px;
+            color: #999999;
+            font-size: 12px;
+            padding: 0 16px;
+            margin: 5px 0px;
+            border-right: 1px solid #EEE;
+        }
+        .bottom .last{
+            border-right: none;
+        }
+        .address{
+            height: 18px;
+            font-size: 12px;
+            color: #999;
+            /* background-color: brown; */
+        }
+        .address a{
+            color: #999;
+        }
+        .address a:hover{
+            cursor: pointer;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="top">
+        <a href="https://tj.meituan.com">
+            <img src="https://s0.meituan.net/bs/file/?f=fe-sso-fs:build/assets/logo.6a89007.png" alt="">
+        </a>
+    </div>
+    <div class="content">
+        <div class="content-left">
+            <img src="https://s0.meituan.net/bs/file/?f=fe-sso-fs:build/page/static/banner/www.jpg" alt="">
+        </div>
+        <div class="content-right">
+            <div class="right-top">
+                <span>账号登录</span>
+                <a href="#" class="sj">手机动态码登录
+                    <i class="iconfont icon-phone"></i>
+                </a>
+            </div>
+            <div class="right-content">
+                <div class="con-input-sjh">
+                    <span class="country-area">+86</span>
+                    <span class="iconfont icon-xiangyou"></span>
+                    <input type="text" placeholder="手机号">
+                </div>
+                <div class="con-input-mm">
+                    <span class="iconfont icon-iconset0114"></span>
+                    <input type="password" placeholder="密码">
+                </div>
+                <div class="con-mm">
+                    <a href="#" class="wjmm">忘记密码？</a>
+                </div>
+                <div class="con-dl">
+                    <button>登录</button>
+                </div>
+                <div class="con-tishi">
+                    还没有账号？
+                    <a href="#">免费注册</a>
+                </div>
+                <div class="con-other">
+                    <fieldset>
+                        <legend>用合作网站账号登录</legend>
+                    </fieldset>
+                    <ul>
+                        <li class="qq"></li>
+                        <li class="xinlang"></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        <div class="bottom">
+            <ul>
+                <li class="bottom-list">关于美团</li>
+                <li class="bottom-list">加入我们</li>
+                <li class="bottom-list">商家入驻</li>
+                <li class="bottom-list">帮助中心</li>
+                <li class="bottom-list last">美团手机版</li>
+            </ul>
+        </div>
+        <div class="address">
+            <span>©2020</span>
+            <a href="https://www.meituan.com">美团网团购</a>
+            <span> meituan.com 京ICP证070791号 京公网安备11010502025545号</span>
+        </div>
+    </div>
+    
+</body>
+</html>
