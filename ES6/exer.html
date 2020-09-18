@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let s1=Symbol()
+        // let obj={
+        //     name:'xx'
+
+        // }
+        // obj[Symbol()]='cc';
+        // console.log(obj)
+        // for(let key in obj){
+        //     console.log(obj[key])
+        // }
+        let arr=[1,2,3,4,2,4]
+
+        // let s1=new Set(arr)
+        // // s1.add(1)
+        // // s1.add(2)
+        // s1.delete(3)
+        // console.log(s1)
+
+        // console.log(s1.has(3))
+
+        // function fn(arr){
+        //     let obj={};
+        //     let result=[]
+        //     for(var i=0;i<arr.length;i++){
+        //         let val=arr[i]
+        //         if(obj[val]){
+        //             obj[val]=obj[val]+1;
+        //         }
+        //         else{
+        //             obj[val]=1;
+        //             result.push(val)
+        //         }
+                
+        //     }
+        //     return result;
+        // }
+        // console.log(fn(arr))
+        // // console.log(new Set(arr))
+        // let s1=new Set(arr);
+        // let arr1=[...s1];
+        // console.log(arr1)
+        // for(let item of s1.entries()){
+        //     console.log(item)
+        // }
+
+        let m1=new Map();
+        let obj={
+            name:"xz"
+        }
+        m1.set(obj,'111')
+        m1.set("a","222")
+        m1.set("b","333")
+        console.log(m1)
+        for(let item of m1.values()){
+            console.log(item)
+        }
+
+        for(let item of m1.entries()){
+            console.log(item)
+        }
+
+        // console.log(s1.delete(obj))
+    </script>
+</body>
+</html>
