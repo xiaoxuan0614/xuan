@@ -4,53 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* #box{
-            display: flex;
-        }
-        #div1{
-            background-color: aqua;
-        }
-        #div2{
-            background-color: bisque;
-            flex: 1;
-        }
-        ul{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        li{
-            background-color: brown;
-            width: 20%;
-        } */
-        body{
-            display: flex;
-            height: 1000px;
-            justify-content: center;
-            align-items: center;
-        }
-        #div1{
-            background-color: brown;
-            height: 300px;
-            width: 300px;
-           
-           
-        }
-    </style>
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
 </head>
 <body>
-    <!-- <div id="box">
-        <div id="div1">hahahh</div>
-        <div id="div2">mmmm</div>
-    </div>
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul> -->
-        <div id="div1"></div>
+    <header class="header-box">
+        <div class="location-box ">
+            <span class="iconfont icon-dingwei">
+
+            </span>
+            <span>理工大厦 &gt;</span>
+        </div>
+        <div class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+                <input type="text" placeholder="请输入商家和商品名称">
+        </div>
+    </header>
+        <ul class="list-box">
+            <li class="cate-list">
+                <img src="https://p1.meituan.net/jungle/8b5e1702d4145ccf058ba5fb31008c5310912.png" alt="">
+            <div>美食</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p0.meituan.net/jungle/45ff2f098a20a77122bff8385192f0ec10547.png" alt="">
+            <div>美团超市</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p1.meituan.net/jungle/12a9834827909fa55f54bce96e67470711250.png" alt="">
+            <div>生鲜果蔬</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p1.meituan.net/jungle/da9181f93dd2e11c5d74cf685470408f10016.png" alt="">
+            <div>美团专送</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p1.meituan.net/jungle/83bfbcf07221cb1ccbcd9114e81ec7ac9209.png" alt="">
+            <div>快食简餐</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p1.meituan.net/jungle/a2a306c5467aba7fac8d7410d161f8db9364.png" alt="">
+            <div>下午茶</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p0.meituan.net/jungle/58b60a312cf86f3a3afc4c96ff0e53438774.png" alt="">
+            <div>汉堡披萨</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p0.meituan.net/jungle/2eee7747fd143249b100b9fa5ee5e31d9873.png" alt="">
+            <div>家常菜</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p0.meituan.net/jungle/2ec76f8f4f21a4ec163adc7fccfa1a399428.png" alt="">
+            <div>小吃馆</div>
+            </li>
+            <li class="cate-list">
+                <img src="https://p1.meituan.net/jungle/dfd03fd91f640682c16179ba85837f739679.png" alt="">
+            <div>鲜花蛋糕</div>
+            </li>
+        </ul>
+        <div class="store">
+            <h3 class="store-near">附近商家</h3>
+            <!-- 推荐列表 -->
+            <ul class="store-list-box">
+                <li class="store-list">
+                    <div class="img-box border4">
+                        <img src="https://p0.meituan.net/business/8b56194d359e0b6b3fab9902424eb8f291691.jpg" alt="">
+                    </div>
+                    <div class="info-box">
+                        <h3 class="title">小林厨房-炸鸡咖喱米饭</h3>
+                        <div class="info-box-content">
+                            <span class="yueshou">月售3000+</span>
+                            <span class="time">30分钟| 1.3km</span>
+                            <div>  <span class="info-box-list"> 起送￥15 | 配送￥1 | 人均￥15</span></div>
+                            <span class="dianping">大众点评高分店铺</span>
+                        </div>
+
+                        
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
 </body>
 </html>
