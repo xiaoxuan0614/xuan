@@ -17,7 +17,7 @@
         // for(let key in obj){
         //     console.log(obj[key])
         // }
-        let arr=[1,2,3,4,2,4]
+        // let arr=[1,2,3,4,2,4]
 
         // let s1=new Set(arr)
         // // s1.add(1)
@@ -52,23 +52,109 @@
         //     console.log(item)
         // }
 
-        let m1=new Map();
-        let obj={
-            name:"xz"
-        }
-        m1.set(obj,'111')
-        m1.set("a","222")
-        m1.set("b","333")
-        console.log(m1)
-        for(let item of m1.values()){
-            console.log(item)
-        }
+        // let m1=new Map();
+        // let obj={
+        //     name:"xz"
+        // }
+        // m1.set(obj,'111')
+        // m1.set("a","222")
+        // m1.set("b","333")
+        // console.log(m1)
+        // for(let item of m1.values()){
+        //     console.log(item)
+        // }
 
-        for(let item of m1.entries()){
-            console.log(item)
-        }
+        // for(let item of m1.entries()){
+        //     console.log(item)
+        // }
 
         // console.log(s1.delete(obj))
+
+        // setTimeout(function(){
+        //     console.log("1");
+        //     setTimeout(function(){
+        //         console.log("2");
+        //         setTimeout(function(){
+        //             console.log("3")
+        //         },1000)
+        //     },2000)
+        // },3000)
+
+        // new Promise(function(resolve,reject){
+        //     setTimeout(function(){
+        //         console.log("我是第一个请求")
+        //         let data=0;
+        //         if(data){
+        //             resolve();
+        //         }
+        //         else{
+        //             reject();
+        //         }
+        //     },3000)
+        // }).then(function(){
+        //     console.log("调用resolve成功")
+        //     // setTimeout(function(){
+        //     //     console.log("我是第二个请求")
+        //     // },2000)
+        // },function(){
+        //     console.log("请求失败")
+        // })
+
+    //    new Promise(function(resolve,reject){
+    //        setTimeout(function(){
+    //            console.log("第一次请求")
+    //            let data=1;
+    //            if(data){
+    //                resolve()
+    //            }
+    //            else{
+    //                reject()
+    //            }
+    //        },3000)
+    //        }).then(function(){
+    //            setTimeout(function () {
+    //             console.log("第二次请求")
+    //            },2000)
+    //        },function(){
+    //            console.log("请求失败")
+    //    })
+        let s1=new Promise(function(resolve){
+            setTimeout(function(){
+            console.log(1)
+            resolve()
+        },3000)
+        })
+        let s2=new Promise(function(resolve){
+            setTimeout(function(){
+            console.log(2)
+            resolve()
+        },2000)
+        })
+        let s3=new Promise(function(resolve,reject){
+            setTimeout(function(){
+            console.log(3)
+            reject()
+        },4000)
+        })
+        // Promise.all([s1,s2,s3]).then(function(){
+        //     console.log("所有都成功")
+        // }).catch(function(){
+        //     console.log("失败")
+        // })
+            Promise.race([s1,s2,s3]).then(function(){
+                console.log("都成功")
+            }).catch(function(){
+                console.log("失败")
+            })
+        // setTimeout(function(){
+        //     console.log("1")
+        // },3000)
+        // setTimeout(function(){
+        //     console.log("2")
+        // },2000)
+        // setTimeout(function(){
+        //     console.log("3")
+        // },1000)
     </script>
 </body>
 </html>

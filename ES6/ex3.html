@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+        var aLi=document.getElementsByTagName("li")
+        var arr=[...aLi];
+        console.log(arr)
+        let arr2=Array.from(aLi)
+        console.log(arr2)
+        console.log(arr2.includes(1))
+        let arr3=["a","b","c","d"]
+        for(let i=0;i<arr3.length;i++){
+            console.log(arr3[i],i)
+        }
+        for(elem of arr3.values()){
+            console.log(elem)   //值
+        }
+        for(elem of arr3.keys()){
+            console.log(elem)   //索引
+        }
+        for(elem of arr3.entries()){
+            console.log(elem)   //[索引，值]
+        }
+
+        arr3.forEach(function(val,index){
+            console.log(val,index)
+
+        })
+
+
+        let arr4=[
+            {
+                name:"lyx",
+                age:20
+            },{
+                name:"rcx",
+                age:30
+            },{
+                name:"lxx",
+                age:10
+            },{
+                name:"ryy",
+                age:25
+            }
+
+        ]
+
+        let arr5=arr4.filter(function(val,index){
+            return val.age<15;
+                
+        })
+        let arr6=arr4.map(function(val,index){
+            // return val.age*2;
+            return {name: val.name, age: val.age*2 };
+        })
+
+        console.log(arr5)
+        console.log(arr6)
+
+        let arr7=[1,2,3,4]
+        let arr8=arr7.map(function(val,index){
+            return val*2+1
+        })
+        console.log(arr8)
+
+        let arr9=arr4.find(function(val,index){
+            return val.age>20;
+        })
+        console.log(arr9)
+
+    </script>
+</body>
+</html>
