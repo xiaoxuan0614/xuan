@@ -1,0 +1,54 @@
+@import 'commom.scss'
+$color:#f00;
+$width:300px;
+body{
+    // background:$color;
+    width: $width;
+}
+// @mixin arrow($width,$color) {
+//     width: 0;
+//     height: 0;
+//     border: $width solid transparent;
+//     border-top:$width solid $color;
+// }
+#box{
+    h1{
+        background: #0f0;
+    }
+    p{
+        color: #303030;
+        background: aqua;
+        // padding:{
+        //     top: 20px;
+        // };
+    }
+    a{
+        color: #f00;
+        &:hover{
+            color: antiquewhite;
+        }
+        // .b{
+        //     color: yellow;
+        // }
+        
+    }
+    
+}
+.arrow{
+    @include arrow(50px,pink)
+}
+.div1{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+.div2{
+    @extend .div1
+}
+$list:success error warn;
+@each $item in $list {
+    .#{$item}{
+        width: 200px;
+        background:url(#{$item}.jpg)
+    }
+}

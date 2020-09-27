@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        #app{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .inputbox{
+            border-top: 1px solid grey;
+            padding-top: 10px ;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        li{
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+        }
+        .price{
+            position: absolute;
+            right: 0;
+
+        }
+        .red{
+            background-color: red;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>todolist</h2>
+        <div class="inputbox">
+            名称：
+            <input type="text" placeholder="请输入商品名称" v-model='Proname'>
+            价格：
+            <input type="text" placeholder="请输入商品价格" v-model='Proprice'>
+            <button @click='add'>添加</button>
+            <input type="text" placeholder="请输入搜索内容">
+            <button>搜索</button>
+        </div>
+        <ul>
+            <li v-for='obj in list' @click="change(obj)":class="{red:obj.isRed}">
+                <input type="checkbox" v-model="ischoose">
+                <span class="name">{{obj.name}}</span>
+                <span class="price">{{obj.price}}[X]</span>
+                   
+            </li>
+        </ul>
+        <button>删除选中</button>
+        <span>总价{{total()}}</span>
+       
+           
+        
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {name:"苹果",price:5,isRed:false},
+                    {name:"apple11",price:666,isRed:false},
+                    
+                ],
+                Proname:'',
+                Proprice:'',
+                ischoose:false
+
+            },
+            methods:{
+                add(){
+                    this.list.push({name:this.Proname,price:this.Proprice,isRed:false});
+                    this.Proname='';
+                    this.Proprice=''
+
+                },
+                total(){
+                    let sum=0;
+                    this.list.forEach((elem)=>{
+                        sum += elem.price;
+                    });
+                    return sum;
+                },
+                change(obj){
+                    obj.isRed=!obj.isRed
+                    obj.ischoose=!obj.ischoose
+                }
+            }
+        })
+    </script>
+</body>
+</html>

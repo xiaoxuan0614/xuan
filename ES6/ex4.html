@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name="lz"
+        let obj={
+            name,
+            age:18, 
+            // say:function(){
+            //     console.log("bababba"+this.name)
+            // }
+            say(){
+                console.log("bababba"+this.name);
+            }
+        }
+        obj.say()
+        let s1="age"
+        console.log(obj[s1])
+
+        let obj1={
+            name:"kx",
+            age:19
+        }
+        let obj2={
+            name:"sss",
+            age:30,
+            school:"heida"
+        }
+
+        console.log({...obj1,...obj2})
+        console.log(Object.assign(obj1,obj2))
+        for(key in obj2){
+            console.log(key,obj2[key])
+        }
+
+        console.log(Object.keys(obj2))  //属性名
+        console.log(Object.values(obj2))  //值
+
+        console.log(Object.entries(obj2))   //组合
+
+    </script>
+</body>
+</html>

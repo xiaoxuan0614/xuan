@@ -1,0 +1,9 @@
+@mixin arrow($width,$color,$dir:"top") {
+    width: 0;
+    height: 0;
+    border: $width solid transparent;
+    @if($dir=='top'){
+        border-top:$width solid $color;
+    }
+    
+}

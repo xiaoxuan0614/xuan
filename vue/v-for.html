@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click='fn'>按钮</button>
+        <ul>
+            <li v-for='obj in arr'>{{obj}}</li>
+        </ul>
+
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                arr:["zhangsan","lisi","wangwu"]
+            },
+            methods:{
+                fn(){
+                    this.arr.push("zhangming")
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

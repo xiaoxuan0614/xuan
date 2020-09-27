@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>
+            {{msm}}
+        </h2>
+        <h1 v-html='msm'></h1>
+        <h3 v-text='msm'></h1>
+        <!-- <h2 @click="change">
+            {{msm}}
+        </h2>
+        <p>{{a}}</p> -->
+    </div>
+    <script src="./vue.js"></script>
+    
+    <script>
+        // let vm=new Vue({
+        //     el:"#app",
+        //     data:{
+        //         msm:"woshi",
+        //         a:"hahahah"
+        //     },
+        //     methods:{
+        //         change(){
+        //             console.log("aaa")
+        //         }
+        //     }
+        // })
+        // console.log(vm.msm)
+        // console.log(vm.$el)
+        // console.log(vm.$data.a)
+        new Vue({
+            el:"#app",
+            data:{
+                msm:'<a href="#">Hello world</a>'
+            }
+        })
+    </script>
+</body>
+</html>

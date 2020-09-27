@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="content">
+        <button @click="add">add</button>
+        <ul>
+            <li v-for="obj in list" @click="change(obj) ":class="{red:obj.isRed}">{{obj.name}}<button>delete</button></li>
+           
+        </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {name:"吃饭",isRed:false},
+                    {name:"睡觉",isRed:false}
+                ],
+                content:""
+            },
+            methods:{
+                add(){
+                    this.list.push({name:this.content,isRed:false}),
+                    this.content=''
+
+                },
+                change(obj){
+                    obj.isRed=!obj.isRed
+                }
+            }
+
+
+        })
+    </script>
+</body>
+</html>

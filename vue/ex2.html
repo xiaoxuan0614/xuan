@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <h1>{{count}}</h1> -->
+        <!-- <button @click='add(2)'>加2</button>
+        <button @click='add(3)'>加3</button> -->
+        <!-- <a href="http://baidu.com" @click.prevent='fn()'>百度</a>
+        <input type="text" v-on:keyup.ctrl='f1()'> -->
+        <h2 v-if='isLogin'>请登录</h2>
+        <h2 v-else>错误</h2>
+
+        <p v-if='x == "a"'>A</p>
+        <P v-else-if='x == "b"'>B</P>
+        <p v-else-if='x == "c"'>C</p>
+        <button @click='change'>改变</button>
+
+        <span v-show='isShow'>xxx</span>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isLogin:true,
+                // count:0,
+                x:"c",
+                isShow:false
+            },
+            methods:{
+                change(){
+                    this.x="a"
+                }
+                // add(num){
+                //     this.count += num
+                // },
+                // fn(){
+                //     console.log("mmm")
+                // },
+                // f1(){
+                //     console.log("shuru")
+                // }
+            }
+        })
+    </script>
+
+</body>
+</html>
