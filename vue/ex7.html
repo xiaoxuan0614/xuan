@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dialog-mask{
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .dialog-container{
+            width: 300px;
+            height: 200px;
+            background: seashell;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -100px;
+        }
+        .dialog-title {
+            border-bottom: 1px solid #ccc;
+        }
+        .close{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click='show()'>show</button>
+        <my-dialog title="登录" v-if="isShow" @show="fn">
+           <div slot="slot1">
+            <div>
+                <label for="name">用户名</label>
+                <input id="name" type="text" />
+            </div>
+            <div>
+                <label for="password">密码</label>
+                <input id="password" type="text" />
+            </div>
+            <div>
+                <button>登录</button>
+            </div>
+           </div>
+           <div slot="slot2">
+            <p>我是底部</p>
+        </div>
+        </my-dialog>
+    </div>
+    <template id="temp">
+        <div class="dialog-mask">
+            <div class="dialog-container">
+                <div class="dialog-title">{{title}}
+                    <span class="close" @click="close">[X]</span>
+                </div>
+                <div>
+                    <slot name="slot1"></slot>
+                </div>
+                <div>
+                    <slot name="slot2"></slot>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isShow:false
+            },
+            components:{
+                'my-dialog':{
+                    template:"#temp",
+                    props:['title'],
+                    methods:{
+                        close(){
+                            this.$emit('show')
+                        }
+                    }
+                }
+            },
+            methods:{
+                show(){
+                    this.isShow=true;
+                },
+                fn(){
+                    this.isShow=false
+                }
+            }
+        })
+    </script>
+</body>
+</html>
