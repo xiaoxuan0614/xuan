@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=div">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+        <h2>{{reverseStr(msg)}}</h2>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"nihao allal mm"
+            },
+            methods:{
+                reverseStr(msg){
+                    return msg.split(" ").reverse().join(" ")
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
