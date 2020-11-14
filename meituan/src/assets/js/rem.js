@@ -7,7 +7,7 @@
     function refreshRem() {
         // 获取屏幕宽度
         var width = docEl.getBoundingClientRect().width;
-        var rem = width / 7.5; // 将屏幕宽度分成6.4份， 1份为1rem   320/6.4 = 50 
+        var rem = width / 6.4; // 将屏幕宽度分成6.4份， 1份为1rem   320/6.4 = 50 
         // 让html的fontSize = 50px   1rem = 50px
         docEl.style.fontSize = rem + 'px';
         // 320  /6.4 = 50   html->50      1rem   50 
