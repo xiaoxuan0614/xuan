@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class ColorPoint extends Point{
+      constructor(x,y,color){
+        super(x,y)  //调用父类的constructor(x,y)
+        this.color=color
+      }
+      toString(){
+        return this.color + '' + super.toString()  //调用父类的toString()
+      }
+    }
+  </script>
+</body>
+
+</html>

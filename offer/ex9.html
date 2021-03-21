@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr3 = [1, 3, 5]
+        // function cloneArray(a) {
+        //     var result = []
+        //     for (var i = 0; i < a.length; i++) {
+        //         result.push(a[i])
+        //     }
+        //     return result
+        // }
+        // var arr4 = cloneArray(arr3)
+        // arr4[1]=7
+        // console.log(arr3)
+        // console.log(arr4)
+
+
+        var obj1={
+            name:"zs",
+            age:19,
+            father:{
+                name:"zee"
+            }
+        }
+        function cloneObject(o){
+            var result={}
+            for(key in o){
+                if(typeof o[key]=="object"){    //是否为引用数据类型
+                    result[key]=cloneObject(o[key])
+                }else{
+                    result[key]=o[key]
+                }
+            }
+            return result
+        }
+        var obj2=cloneObject(obj1)
+        obj2.father.name="sk"
+        console.log(obj1)
+        console.log(obj2)
+    </script>
+</body>
+
+</html>

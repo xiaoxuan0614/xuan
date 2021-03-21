@@ -2,12 +2,12 @@
   <div class="order-box">
     <div class="title">
       <ul>
-        <li v-for="obj in nav" :key="obj.id">{{ obj.name }}</li>
+        <li :class="{active:index == currentIndex,'cate-list':true}" v-for="(obj,index) in nav" @click="change(index)" :key="obj.id">{{ obj.name }}</li>
       </ul>
     </div>
     <div class="content">
       <div>
-        <div v-for="(obj, index) in goods" :key="index">
+        <div class="pro-content" v-for="(obj, index) in goods" :key="index">
           <h2 class="con-name">{{ obj.name }}</h2>
           <ul>
             <li class="con-goods" v-for="prod in obj.content" :key="prod.id">
@@ -41,7 +41,33 @@ export default {
     return {
       nav: [],
       goods: [],
+      currentIndex:0,
+      pos:[],
+      scrollY:0
     };
+  },
+  methods:{
+    change(index){
+      let proContentList = document.getElementsByClassName("pro-content")
+      console.log(proContentList[index]);
+       // ele 元素
+      this.contentScroll.scrollToElement(proContentList[index],300)
+      this.currentIndex=index
+    },
+    getPos(){
+      let proContentList = document.getElementsByClassName("pro-content")
+      let H=0;
+      for(let i=0;i<proContentList.length;i++){
+        if(i==0){
+          this.pos.push(0)
+        }else{
+          H += proContentList[i-1].offsetHeight
+          this.pos.push(H)
+        }
+        console.log(this.pos)
+      }
+
+    }
   },
   created() {
     axios
@@ -54,17 +80,39 @@ export default {
         this.goods = res.data.data.goods;
         //渲染到页面后
         this.$nextTick(() => {
-          let titleScroll = new BetterScroll(".title", {
+          this.titleScroll = new BetterScroll(".title", {
             click: true,
             bounce: false,
           });
-          let contentScroll = new BetterScroll(".content", {
+          this.contentScroll = new BetterScroll(".content", {
             click: true,
             bounce: false,
+            probeType:3
           });
+          this.contentScroll.on("scroll",position=>{
+            this.scrollY=Math.abs(position.y)
+            console.log(this.scrollY)
+          });
+          this.getPos()
         });
       });
   },
+  watch:{
+    scrollY(val) {
+      for(let index=0;index<this.pos.length;index++){
+        let pos1=this.pos[index]
+        let pos2=this.pos[index+1]
+        if(val>= pos1 && val <pos2){
+          //  console.log(index);
+           this.currentIndex = index;
+           let cateList = document.querySelectorAll('.cate-list');
+           this.titleScroll.scrollToElement(cateList[index],300)
+           break;
+        }
+
+      }
+    }
+  }
 };
 </script>
 
@@ -85,6 +133,11 @@ export default {
       color: #666666;
       overflow: hidden;
       display: inline-block;
+    }
+    .active{
+      background: white;
+      color: red;
+
     }
   }
   .content {

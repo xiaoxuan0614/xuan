@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(typeof(123))
+        var arr=[1,2,3]
+        var arr2=arr
+        arr[1]=5
+        console.log(arr,arr2)
+
+        var a=10
+        var b=a
+        a=20
+        console.log(a,b)
+
+        //克隆数组
+        var arr3=[1,2,3]
+        function cloneArr(a){
+            var result=[]
+            for(var i=0;i<a.length;i++){
+                result.push(a[i])
+            }
+            return result
+        }
+        var arr4=cloneArr(arr3)
+        console.log(arr4)
+
+        //深度克隆obj
+        var obj3={name:"lxx",age:20,father:{name:"lyl"}}
+        function cloneobj(o){
+            var result={}
+            for(key in o){
+                if(typeof o[key]=="object"){
+                    result[key]=cloneobj(o[key])
+                }
+                result[key]=o[key]
+            }
+            return result
+        }
+        var obj4=cloneobj(obj3)
+        obj4.father.name="lxs"
+        console.log(obj3,obj4)
+
+        //类
+        function Person(name,age)
+        {
+            this.name=name
+            this.age=age
+        }
+        //原型对象
+        Person.prototype.eat=function(){
+            console.log("吃")
+        }
+        var p1=new Person("zs",18)
+        console.log(p1.name)
+        p1.eat()
+
+        //继承
+        function Baby(name,age)
+        {
+            this.name=name;
+            this.age=age
+        }
+        Baby.prototype.eat=function(){
+            console.log("吃")
+        }
+        function Coder(name,age){
+            Baby.call(this,name,age)
+        }
+        Coder.prototype=new Baby()
+        Coder.prototype.constructor=Coder
+        var c1=new Coder("小妞",18)
+        console.log(c1)
+        c1.eat()
+        // document.getElementById()
+        // document.getElementsByClassName()
+        // document.getElementsByTagName()
+        // document.getElementsByName()
+        // document.querySelector()
+        // document.querySelectorAll()
+        
+        // document.createElement()
+        // appendChild()
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

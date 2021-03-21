@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <ul id="app">
+        <li :class="{color}">{{firstname}}</li>
+        <li>{{firstname}}</li>
+        <li>hsixosisa</li>
+    </ul>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                firstname:"lalalalalallalal"
+            }
+        })
+    </script>
+</body>
+</html>

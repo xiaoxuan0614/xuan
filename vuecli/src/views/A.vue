@@ -1,6 +1,7 @@
 <template>
     <div>
 A页面
+<button>按钮</button>
     </div>
 </template>
 

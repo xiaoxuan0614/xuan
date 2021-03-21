@@ -8,6 +8,10 @@
          {{$route.query.id}}
          ___
         {{id}}
+        <div>密码:
+            <input type="password" v-model="password">
+        </div>
+        <button :disabled="!password">阿牛</button>
     </div>
 </template>
 
@@ -15,7 +19,8 @@
     export default {
         data(){
             return {
-                id:this.$route.query.id
+                id:this.$route.query.id,
+                password:''
             }
         }
         

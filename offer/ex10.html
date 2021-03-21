@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=10;
+        function  fn(x){
+            x=20
+            console.log(x) //20
+        }
+        fn(a)
+        console.log(a)  //10
+
+
+        var arr1=[1,2,3]
+        function fn2(x){
+            x[1]=9
+            console.log(x)  //[1,9,3]
+        }
+        fn2(arr1)
+        console.log(arr1)  //[1,9,3]
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+@width: 100px;
+@height: @width+100px;
+@background: #224488/2;
+.xkd{
+    h3{
+        color: #F00;
+    }
+ }
+#head {
+    width: @width;
+    height: @height;
+    background: @background;
+    .border1;
+}
+.border(@linecolor:yellow){
+    // border-top: dotted 1px yellow;
+    border-bottom: solid 2px @linecolor;
+}
+.border1 {
+    .border()
+}
+#colors() {
+    primary:blue;
+    secondary:green
+}
+.button{
+    color: #colors[primary];
+    border: 1px solid #colors[secondary];
+}
+#div1{
+    @list: rgb(221, 34, 34),rgb(238, 124, 57) 30%,rgb(239, 241, 74);
+    background-image: svg-gradient(to right,@list);
+    width: @width;
+    height: @height;
+    // background: red;
+}

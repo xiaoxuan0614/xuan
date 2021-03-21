@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name=name,
+            this.age=age
+        }
+        Person.prototype.eat=function(){
+            console.log("吃")
+        }
+        //Coder子类继承父类Person，通过在子类中调用父类的构造函数.call(this)继承属性
+        function Coder(name,age){
+            Person.call(this,name,age)//this=p1
+        }
+        //子类的原型对象 = new 父类的实例化对象继承方法
+        Coder.prototype=new Person()
+        Coder.prototype.constructor=Coder
+        var p1=new Coder("zs",18)
+        console.log(p1.name)
+        p1.eat()
+    </script>
+</body>
+</html>

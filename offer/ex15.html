@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            height: 400px;
+            width: 400px;
+            background-color: red;
+        }
+        #div2{
+            height: 300px;
+            width: 300px;
+            background-color: royalblue;
+        }
+        #div3{
+            height: 200px;
+            width: 200px;
+            background-color: seagreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+    <script>
+        var oDiv1=document.getElementById("div1")
+        var oDiv2=document.getElementById("div2")
+        var oDiv3=document.getElementById("div3")
+        oDiv1.addEventListener('click',function(){
+            console.log("div1捕获")
+        },true)
+        oDiv2.addEventListener('click',function(){
+            console.log("div2捕获")
+        },true)
+        oDiv3.addEventListener('click',function(){
+            console.log("div3捕获")
+        },true)//从外到里捕获
+
+        oDiv1.addEventListener('click',function(){
+            console.log("div1冒泡")
+        },false)
+        oDiv2.addEventListener('click',function(){
+            console.log("div2冒泡")
+        },false)
+        oDiv3.addEventListener('click',function(e){
+            console.log("div3冒泡")
+            e.stopPropagation()
+            e.cancelBubble=true
+        },false)//从里往外冒泡
+
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">11</div>
+    <script>
+        var oDiv = document.getElementById("div1")
+        oDiv.onclick=function(){
+            console.log("aaa")
+        }
+        oDiv.onclick=function(){
+            console.log("bbb")
+        }//只输出bbb（第二个把第一个覆盖）
+
+        //参数：事件名  事件处理函数 捕获或冒泡(false|true)
+        oDiv.addEventListener('click',function(){
+            console.log(111)
+        },false)
+        oDiv.addEventListener('click',function(){
+            console.log(222)
+        },false)//111 222两个都输出执行
+    </script>
+</body>
+</html>

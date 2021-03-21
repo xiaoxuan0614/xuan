@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+       //后生成的元素事件绑定问题
+        var aLi=document.querySelectorAll('li')
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onclick=function(){
+                console.log(this.innerHTML)
+            }
+        }
+        //事件委托 父元素绑定事件，当点击子元素时通过事件冒泡会触发父元素的点击事件
+        //在父元素的点击事件中，通过判断事件源(target)
+        var oUl=document.getElementsByTagName("ul")[0]
+        var oBt=document.getElementById("btn")
+        oUl.onclick=function(e){
+            e = e ||window.event
+            //当你点击的是li执行输出 -> 获取事件源
+            if(e.target.tagName=="LI"){
+                console.log(e.target.innerHTML)
+            }
+
+        }
+
+        oBt.onclick=function(){
+            var oLi=document.createElement('li')
+            oLi.innerHTML=Math.random()
+            oUl.appendChild(oLi)
+            
+        }
+    </script>
+</body>
+</html>

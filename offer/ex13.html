@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">111</div>
+    <script>
+        // function fn(){
+        //     console.log(this)  //this指向window
+        // }
+        // fn()
+
+        // setInterval(()=>{
+        //     console.log(this)  //this指向window
+        // })
+
+        // var oDiv = document.getElementById("div1")
+        // oDiv.click=function(){
+        //     console.log(this)  //this指向oDiv
+        // }
+
+        var obj={
+            name:"zds",
+           eat:function(){
+               console.log(this)
+           }
+        }
+        obj.eat() //this指向obj
+
+        // function Person(name){
+        //     this.name=name
+        // }
+        // var p1=new Person('zs') //this指向实例化对象p1
+        // var p2=new Person('bk') //this指向实例化对象p2
+
+        function fn(x,y){
+            console.log(this,x,y)
+        }
+        fn()//window
+        fn.call(obj,1,2) //this指向 参数1，参数2
+        fn.apply(obj,[1,2])  //this指向 []参数
+        fn.bind(obj,1,2)()  //this指向 参数1，参数2
+
+
+    </script>
+</body>
+</html>

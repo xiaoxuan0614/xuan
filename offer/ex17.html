@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <script>
+        var alink=document.getElementsByTagName("a")[0]
+        alink.onclick=function(e){
+            console.log(11)
+            // return false
+            e.preventDefault();
+            e.returnValue=false
+        }
+    </script>
+</body>
+</html>
