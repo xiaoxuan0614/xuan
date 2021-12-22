@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script src="js/jquery-1.9.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/banner.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	$(function(){
+				pingyimove(".left_1",".right_1",".pic",".dian",".box");
+				pingyimove(".left_2",".right_2",".pic",".dian",".box");
+			})
+</script>
+<script type="text/javascript">
+(function($){
+
+	$.fn.myScroll = function(options){
+	//默认配置
+	var defaults = {
+		speed:40,  //滚动速度,值越大速度越慢
+		rowHeight:24 //每行的高度
+	};
+	
+	var opts = $.extend({}, defaults, options),intId = [];
+	
+	function marquee(obj, step){
+	
+		obj.find(".ab").animate({
+			marginTop: '-=1'
+		},0,function(){
+				var s = Math.abs(parseInt($(this).css("margin-top")));
+				if(s >= step){
+					$(this).find(".top").slice(0, 1).appendTo($(this));
+					$(this).css("margin-top", 0);
+				}
+			});
+		}
+		
+		this.each(function(i){
+			var sh = opts["rowHeight"],speed = opts["speed"],_this = $(this);
+			intId[i] = setInterval(function(){
+				if(_this.find(".ab").height()<=_this.height()){
+					clearInterval(intId[i]);
+				}else{
+					marquee(_this, sh);
+				}
+			}, speed);
+
+			_this.hover(function(){
+				clearInterval(intId[i]);
+			},function(){
+				intId[i] = setInterval(function(){
+					if(_this.find(".ab").height()<=_this.height()){
+						clearInterval(intId[i]);
+					}else{
+						marquee(_this, sh);
+					}
+				}, speed);
+			});
+		
+		});
+
+	}
+
+})(jQuery);
+
+$(function(){
+
+	$("div.ranklist").myScroll({
+		speed:40,
+		rowHeight:24
+	});
+	
+});
+</script>
+</head>
+
+<body>
+<div class="topp">
+  <div class="logo"><a href="#"><img src="images/logo2.png" /></a></div>
+  <div class="xuanzediqu">
+  	<p><strong>中国</strong></p>
+	<p>切换国家<span><img src="images/jiantou.png" /></span></p>
+  </div>
+  <div class="search">
+    <input type="text" class="search_text" value="请输入关键字" id="search_box" />
+    <div class="search_button"><a href="sousuo.html">搜&nbsp;&nbsp;索</a></div>
+  </div>
+  
+  <div class="phone">
+  	<div class="phone_img">
+  		<img src="images/phnoe.png" />
+    </div>
+    <div class="phone_font">
+    	<p class="rexian">服务热线：</p>
+        <p class="dianhua">xxx</p>
+    </div>
+  </div>
+</div>
+<div class="c"></div>
+<div class="nav">
+  <ul>
+    <li class="shouye"><a href="index.html">网站首页</a></li>
+    <li><a href="zhijiebaoming.html">直接报名</a><p class="hot"><img src="images/hot.png" /></p></li>
+    <li><a href="tuangou.html">跟团游</a></li>
+    <li><a href="#">自由行</a></li>
+    <li><a href="#">私人订制</a></li>
+    <li><a href="news.html">游记攻略</a></li>
+    <li><a href="liuyanhudong.html">留言互动</a></li>
+    <li><a href="liaojiewomen.html">了解我们</a></li>
+  </ul>
+</div>
+<div class="main">
+  <div class="news_banner">
+    <div class="news">
+      <div class="hangqing">游记攻略<span><a href="#">更多>></a></span></div>
+      <div class="hangqing_main">
+        <ul>
+          <li><a href="neirongye.html">束河旅游攻略...</a></li>
+          <li><a href="neirongye.html">西双版纳旅游攻略</a></li>
+          <li><a href="neirongye.html">泸沽湖、摩梭人的母亲河...</a></li>
+          <li><a href="neirongye.html">从昆明到景洪</a></li>
+          <li><a href="#">大理旅游攻略</a></li>
+          <li><a href="#">大理旅游攻略</a></li>
+          <li><a href="#">大理旅游攻略</a></li>
+          <li style="border-bottom:none;"><a href="#">西双版纳旅游攻略</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="box">
+        <ul class="pic yyy">
+          <li><img src="images/pic_1.jpg"/></li>
+          <li><img src="images/pic_3.jpg"/></li>
+          <li><img src="images/2.jpg"/></li>
+          <li><img src="images/pic_1.jpg"/></li>
+        </ul>
+        <ul class="dian">
+          <li class="current"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <button class="left left_1"></button>
+        <button class="right right_1"></button>
+      </div>
+    </div>
+  </div>
+  <div class="c"></div>
+  <div class="zhengzhoujiaxiao">
+    <div class="zhengzhoujiaxiao_font">旅游地区</div>
+    <span class="more"><a href="#">更多>></a></span>
+    <div class="c"></div>
+  </div>
+  <div class="diqu">
+    <div class="xuanze">
+      <ul>
+        <li class="diqu_font">地区选择：</li>
+        <li>三亚</li>
+        <li><a href="#">厦门</a></li>
+        <li><a href="#">厦门</a></li>
+        <li><a href="#">华东</a></li>
+        <li><a href="#">西安</a></li>
+        <li><a href="#">西北</a></li>
+        <li><a href="#">长江三峡</a></li>
+        <li><a href="#">港澳</a></li>
+        <li><a href="#">马尔代夫</a></li>
+        <li><a href="#">欧洲</a></li>
+        <li><a href="#">澳新南太</a></li>
+        <li><a href="#">泰国</a></li>
+        <li><a href="#">马尔代夫</a></li>
+      </ul>
+    </div>
+    <div class="paixu">
+      <ul>
+        <li><a href="#">默认排序</a></li>
+        <li><a href="#">最热</a><p class="hot1"><img src="images/hot.png" /></p></li>
+        <li><a href="#">销量</a></li>
+        <li><a href="#">价格</a></li>
+        <li><a href="#">口碑</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="jiaxiao_main">
+    <ul>
+      <li><a href="#"><img src="images/12.jpg" /></a>
+        <div class="xuexiaomingzi"><a href="#">马尔代夫</a></div>
+        <div class="xuexiaodizhi"><a href="#">马尔代夫路</a></div>
+        <div class="qingkuang">
+          <p class="xianzaijiage">￥24000.00元/人</p>
+          <p class="yuanlaijiage">￥28000.00元/人</p>
+          <p class="xiangqing"><a href="#">详情>></a></p>
+        </div>
+      </li>
+     <li><a href="#"><img src="images/12.jpg" /></a>
+        <div class="xuexiaomingzi"><a href="#">马尔代夫</a></div>
+        <div class="xuexiaodizhi"><a href="#">马尔代夫路</a></div>
+        <div class="qingkuang">
+          <p class="xianzaijiage">￥24000.00元/人</p>
+          <p class="yuanlaijiage">￥28000.00元/人</p>
+          <p class="xiangqing"><a href="#">详情>></a></p>
+        </div>
+      </li>
+     <li><a href="#"><img src="images/12.jpg" /></a>
+        <div class="xuexiaomingzi"><a href="#">马尔代夫</a></div>
+        <div class="xuexiaodizhi"><a href="#">马尔代夫路</a></div>
+        <div class="qingkuang">
+          <p class="xianzaijiage">￥24000.00元/人</p>
+          <p class="yuanlaijiage">￥28000.00元/人</p>
+          <p class="xiangqing"><a href="#">详情>></a></p>
+        </div>
+      </li>
+     <li><a href="#"><img src="images/12.jpg" /></a>
+        <div class="xuexiaomingzi"><a href="#">马尔代夫</a></div>
+        <div class="xuexiaodizhi"><a href="#">马尔代夫路</a></div>
+        <div class="qingkuang">
+          <p class="xianzaijiage">￥24000.00元/人</p>
+          <p class="yuanlaijiage">￥28000.00元/人</p>
+          <p class="xiangqing"><a href="#">详情>></a></p>
+        </div>
+      </li>
+     <li><a href="#"><img src="images/12.jpg" /></a>
+        <div class="xuexiaomingzi"><a href="#">马尔代夫</a></div>
+        <div class="xuexiaodizhi"><a href="#">马尔代夫路</a></div>
+        <div class="qingkuang">
+          <p class="xianzaijiage">￥24000.00元/人</p>
+          <p class="yuanlaijiage">￥28000.00元/人</p>
+          <p class="xiangqing"><a href="#">详情>></a></p>
+        </div>
+      </li>
+      <li><a href="#"><img src="images/12.jpg" /></a>
+        <div class="xuexiaomingzi"><a href="#">马尔代夫</a></div>
+        <div class="xuexiaodizhi"><a href="#">马尔代夫路</a></div>
+        <div class="qingkuang">
+          <p class="xianzaijiage">￥24000.00元/人</p>
+          <p class="yuanlaijiage">￥28000.00元/人</p>
+          <p class="xiangqing"><a href="#">详情>></a></p>
+        </div>
+      </li>
+    <li><a href="#"><img src="images/12.jpg" /></a>
+        <div class="xuexiaomingzi"><a href="#">马尔代夫</a></div>
+        <div class="xuexiaodizhi"><a href="#">马尔代夫路</a></div>
+        <div class="qingkuang">
+          <p class="xianzaijiage">￥24000.00元/人</p>
+          <p class="yuanlaijiage">￥28000.00元/人</p>
+          <p class="xiangqing"><a href="#">详情>></a></p>
+        </div>
+      </li>
+      <li><a href="#"><img src="images/12.jpg" /></a>
+        <div class="xuexiaomingzi"><a href="#">马尔代夫</a></div>
+        <div class="xuexiaodizhi"><a href="#">马尔代夫路</a></div>
+        <div class="qingkuang">
+          <p class="xianzaijiage">￥24000.00元/人</p>
+          <p class="yuanlaijiage">￥28000.00元/人</p>
+          <p class="xiangqing"><a href="#">详情>></a></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="c"></div>
+  <div class="koubei_baoming">
+    <div class="koubei">
+      <div class="koubeizhanshi">
+        <div class="koubeizhanshi_font">精彩游记</div>
+        <span class="more"><a href="#">更多>></a></span> </div>
+      <div class="koubeizhanshi_main">
+        <ul>
+          <li><a href="#">风花雪月，自在大理</a><span>[2020-06-25]</span></li>
+          <li><a href="#">7月准备去甘南，有没有人一起啊</a><span>[2020-06-25]</span></li>
+          <li><a href="#">不能停下的脚步--阴差阳错遇见你</a><span>[2020-06-25]</span></li>
+          <li><a href="#">寻迹文成公主、重走唐蕃古道</a><span>[2020-06-25]</span></li>
+          <li><a href="#">不能停下的脚步--阴差阳错遇见你</a><span>[2020-06-25]</span></li>
+          <li><a href="#">新乡红绿灯考场12月团购会精彩再现</a><span>[2020-06-25]</span></li>
+          <li><a href="#">寻迹文成公主、重走唐蕃古道</a><span>[2020-06-25]</span></li>
+          <li style="border-bottom:none;"><a href="#">寻迹文成公主、重走唐蕃古道</a><span>[2020-06-25]</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="baoming">
+      <div class="baomingliebiao">
+        <div class="baomingliebiao_font">驴友约伴</div>
+	  </div>
+      <div class="baomingliebiao_main">
+        <div class="biaoti">
+          <div class="biaoti_top">
+            <ul>
+              <li>地点</li>
+              <li>游行时间</li>
+              <li>电话</li>
+              <li>约伴人数</li>        
+              <li>报名时间</li>
+              <div class="c"></div>
+            </ul>
+          </div>
+          <div class="c"></div>
+          <div class="xiangxixinxi">
+            <div class="demo">
+              <div class="ranklist">
+                <ul class="ab">
+                  <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                   <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                 <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                  <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                  <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                   <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                   <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                   <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                  <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                   <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                  <li class="top">
+                    <ul class="xiangqing">
+                      <li class="xingming">西藏</li>
+                      <li class="baoming_dianhua">5天</li>
+                      <li class="leixing">152****2536</li>
+                      <li class="renshu">5人</li>
+                      <li class="baoming_shijian">2020-07-20</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c"></div>
+      </div>
+    </div>
+  </div>
+  <div class="c"></div>
+  <div class="youqinglianjie">
+  	<ul>
+    	<li class="lianjie">友情链接</li>
+        <li><a href="#">百度旅游</a></li>
+        <li><a href="#">携程旅游攻略</a></li>
+        <li><a href="#">米胖天气预报</a></li>
+        <li><a href="#">去哪儿旅游攻略</a></li>
+        <li><a href="#">搜狐旅游</a></li>
+        <li><a href="#">同程旅游</a></li>
+        
+    </ul>
+    <div class="c"></div>
+  </div>
+  <div class="footter">
+  	<a href="#">首页</a>|
+    <a href="#">关于我们</a>|
+    <a href="https://shop243665397.taobao.com/" target="_blank">联系我们</a>|
+    <a href="#">旅行攻略</a>
+    <p>Copyright ©版权所有 </p>
+  </div>
+</div>
+</body>
+</html>

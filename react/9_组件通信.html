@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(){
+                super()
+                this.state={
+                    score:80
+                }
+                this.change = this.change.bind(this)
+            }
+            change(num,type){
+                type === "+"?
+                this.setState({
+                    score: this.state.score + num
+                }):
+                this.setState({
+                    score: this.state.score - num
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h2>父组件</h2>
+                        <Child name="张三" score={this.state.score} change={this.change}/>
+                    </div>
+                )
+            }
+        }
+        class Child extends React.Component{
+            render(){
+                let {name,score,change} = this.props;
+                return(
+                    <p>
+                        {name}  成绩：{score}
+                        <button onClick={()=>{ change(3,"+")}}>+</button>
+                        &nbsp;
+                        <button onClick={()=>{ change(2,"-")}}>-</button> 
+                    </p>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

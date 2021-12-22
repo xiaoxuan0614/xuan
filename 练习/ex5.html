@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const quickSort = (nums) =>{
+            if(nums.length<2){
+                return nums;
+            }else {
+                var left=[],right=[];
+                var pivot=Math.floor(nums.length/2)
+                var base=nums.splice(pivot,1)[0];
+                for(let i=0;i<nums.length;i++){
+                    nums[i]<base ? left.push(nums[i]) : right.push(nums[i]);
+                }
+            }
+            return quickSort(left).concat([base],quickSort(right))
+        }
+
+    </script>
+</body>
+</html>

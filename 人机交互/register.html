@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/register.css">
+</head>
+
+<body>
+    <div class="left">
+      <img src="./image/背景图.png" alt="">
+    </div>
+    <div class="right">
+        <img class="logo" src="./image/logo.png" alt="">
+        <span class="title">爱旅之家</span>
+        <a href="./help.html" class="help">关于我们</a>
+        <div class="box">
+          <div class="box-title">登录</div>
+          <form action="./first-page.html">
+            <div>
+              账号：<input type="text" placeholder="请输入账号" id="uname">
+            </div>
+            <div>
+              密码：<input type="password" placeholder="请输入密码" id="pwd">
+            </div>
+            <input type="submit" value="登录" class="button" onclick="return checkuser()"/> 
+          </div>
+          </form>
+          
+    </div>
+    <script type="text/javascript"> 
+      function getValue(id) { 
+          return document.getElementById(id).value; 
+      } 
+      function checkuser() { 
+          if(getValue('uname') == "liuxiaoxuan" && getValue('pwd') == "123456") { 
+              return true; 
+          }else { 
+              alert("登录名或密码错误！")
+              return false; 
+          } 
+      } 
+  </script> 
+</body>
+
+</html>

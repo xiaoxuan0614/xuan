@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var hasPath=(function(){
+            var result=false;
+            function judgePath(root,key){
+                if(result){
+                return;
+                }
+                if(root.data == key) {
+                   result = true;
+                }else if(root.data < key) {
+                    key=key-root.data;
+                    if(root.left!=null){
+                        judgePath(root.left,key);
+                    }
+                    if(root.right!=null) {
+                        judgePath(root.right,key);
+                    }
+                }
+            }
+            return function(root,key){
+                result=false;
+                judgePath(root,key);
+                return result;
+            }
+            
+        })();
+
+        function Node(){
+            this.data = arguments[0];
+            this.left = null;
+            this.right=null;
+        }
+        var root=new Node(5)
+        var root2=new Node(4);
+        var root1=new Node(8);
+        root.left=root2;
+        root.right=root1;
+        alert(hasPath(root,12));
+        // alert(hasPath(root,10));
+    </script>
+</body>
+</html>

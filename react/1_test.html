@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+    let a = 10;
+    let b = 20;
+        ReactDOM.render(
+            <div>
+                <h1>标题</h1>
+                <p>莫西莫西{a}阿巴阿巴{b}</p>
+            </div>
+            ,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

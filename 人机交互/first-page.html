@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/first-page.css">
+</head>
+
+<body>
+    <div class="header">
+        <img class="header-logo" src="./image/logo.png" alt="">
+        <span class="header-title">爱旅之家</span>
+        <a href="./register.html" class="denglu">登录</a>
+        <a href="./help.html" class="help">关于我们</a>
+        <div class="phone">
+            <img src="./image/phnoe.png" />
+            <span>服务热线：022-121338</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-choose">
+            <div class="choose-title">
+                制定出行规划
+            </div>
+            <div class="choose-content">
+                <div>
+                    目的地：
+                    <input type="text" id="city" placeholder="请填写">
+                    <!-- <select style="width: 60px; height: 20px;">
+                        <option value="beijing" id="city">北京</option>
+                        <option value="shanghai" id="city">上海</option>
+                        <option value="chengdu" id="city">成都</option>
+                    </select> -->
+                </div>
+                <div>
+                    出行方式：
+                    <input type="text" id="tranport" placeholder="火车或者飞机">
+                </div>
+                <div>
+                    出发日期：
+                    <input type="date">
+                </div>
+                <div>
+                    游玩时间：
+                    <input type="radio" name="playday" value="threeday">3天
+                    <input type="radio" name="playday" value="fiveday">5天
+                    <input type="radio" name="playday" value="eightday">8天
+                    <input type="radio" name="playday" value="tenday">10天
+                </div>
+                <div>
+                    出行人数：
+                    <input type="text" style="width: 50px;" placeholder="请输入">人
+                </div>
+                <div>
+                    备注：<br />
+                    <textarea rows="5" cols="10" style="width: 350px; height: 65px;"
+                        placeholder="请输入，长度不能超过100字"></textarea>
+                </div>
+                <input type="submit" value="搜索" class="button" onclick="search()" />
+            </div>
+        </div>
+        <div class="imgBox">
+            <img class="img-slide img1" src="./image/pic_1.jpg" alt="1">
+            <img class="img-slide img2" src="./image/pic_2.jpg" alt="2">
+            <img class="img-slide img3" src="./image/pic_3.jpg" alt="3">
+        </div>
+    </div>
+    <script type="text/javascript">
+        function getValue(id) { 
+          return document.getElementById(id).value; 
+      } 
+      function search() { 
+          if(getValue('city') == "北京" && getValue('tranport')=="飞机" ){ 
+              location.href="bjplane.html";
+          }else if(getValue('city') == "上海" && getValue('tranport')=="飞机" ) { 
+              location.href="shplane.html";
+          }else if(getValue('city') == "成都"  && getValue('tranport')=="飞机" ) { 
+              location.href="cdplane.html";
+          } else if(getValue('city') == "北京" && getValue('tranport')=="火车" ) { 
+              location.href="bjtrain.html";
+          }else if(getValue('city') == "成都"  && getValue('tranport')=="火车" ) { 
+              location.href="cdtrain.html";
+          } else if(getValue('city') == "上海" && getValue('tranport')=="火车" ) { 
+              location.href="shtrain.html";
+          }else { 
+              alert("没找到！")
+          } 
+      } 
+        var index = 0;
+        //改变图片
+        function ChangeImg() {
+            index++;
+            var a = document.getElementsByClassName("img-slide");
+            if (index >= a.length) index = 0;
+            for (var i = 0; i < a.length; i++) {
+                a[i].style.display = 'none';
+            }
+            a[index].style.display = 'block';
+        }
+        //设置定时器，每隔两秒切换一张图片
+        setInterval(ChangeImg, 2000);
+
+
+    </script>
+</body>
+
+</html>

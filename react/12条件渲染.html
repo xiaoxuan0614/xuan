@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(){
+                super();
+                this.state ={
+                    isLogin:0 //1 已登录 0 未登录
+                }
+            }
+            render(){
+                return(
+                    <div>{
+                        this.state.isLogin?<p>你好</p>:<p>请登录</p>
+                    }
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main/>,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
